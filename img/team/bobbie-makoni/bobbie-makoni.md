@@ -1,0 +1,3 @@
+Bobbie Makoni
+
+Bobbie Makoni is a sports media executive who has worked in the UK, Europe, and across Africa, creating and delivering content for major sports leagues. Bobbie was introduced to WCF by her former head teacher Alexandra Eversole who also sat on the board for a number of years. Bobbie is passionate about empowering and providing opportunities for young people. Outside of work Bobbie is a keen tennis player and enjoys frequent visits to the theatre.

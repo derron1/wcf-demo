@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Women's Careers Foundation</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/cxg4xgz.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme_vibrant_blocks_1.css">
+    
+    <style>
+        /* Import theme colors */
+        @import url('theme_vibrant_blocks_1.css');
+        
+        /* Custom styles */
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: var(--font-sans);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            color: var(--foreground) !important;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.6s ease-out;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;  /* Orange #f14000 */
+        }
+        
+        /* Button Styles */
+        .btn {
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-content {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .timeline-year {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--background);
+            font-weight: bold;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Section Tag Styles */
+        .section-tag {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background-color: var(--accent);
+            color: var(--background);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 0.25rem;
+        }
+        
+        /* Hero section with gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        /* Footer styles */
+        .footer-link {
+            transition: color 0.2s ease;
+            color: var(--background) !important;
+            opacity: 0.9;
+        }
+        
+        .footer-link:hover {
+            color: white !important;
+            opacity: 1;
+        }
+        
+        .footer-section {
+            background: var(--accent) !important;
+        }
+        
+        /* Header sticky shadow */
+        header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Quote box style */
+        .quote-box {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem;
+            border-radius: 1rem;
+            position: relative;
+            font-style: italic;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 transition-shadow duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center mr-3">
+                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Group 1">
+                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider">Women's Careers Foundation</h3>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="transition hover:text-primary" style="color: var(--foreground)">Home</a>
+                    <a href="about_us.html" class="transition hover:text-primary" style="color: var(--foreground)">About Us</a>
+                    <a href="meet_the_team.html" class="transition hover:text-primary" style="color: var(--foreground)">Meet The Team</a>
+                    <a href="get_involved.html" class="transition hover:text-primary" style="color: var(--foreground)">Get Involved</a>
+                    <a href="contact_us.html" class="transition hover:text-primary" style="color: var(--foreground)">Contact</a>
+                    <a href="donor_page.html" class="px-6 py-2 rounded-full text-white btn" style="background: var(--primary)">Apply</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+                    <i data-lucide="x" class="w-6 h-6 hidden" id="closeIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="hidden md:hidden" id="mobileMenu">
+            <div class="px-4 py-3 space-y-1 bg-white border-t" style="border-color: var(--border);">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Home</a>
+                <a href="about_us.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground); background: var(--background);">About Us</a>
+                <a href="meet_the_team.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Meet The Team</a>
+                <a href="get_involved.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Get Involved</a>
+                <a href="contact_us.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Contact</a>
+                <div class="pt-3">
+                    <a href="donor_page.html" class="block px-6 py-3 rounded-full text-white text-center font-bold" style="background: var(--primary);">Apply</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden" style="background: var(--background)">
+        <!-- Geometric decorative shapes -->
+        <div class="absolute top-0 left-0 w-0 h-0" style="border-left: 300px solid transparent; border-top: 300px solid var(--secondary); opacity: 0.1; transform: rotate(-15deg) translateX(-100px) translateY(-100px);"></div>
+        <div class="absolute bottom-0 right-0 w-0 h-0" style="border-right: 400px solid transparent; border-bottom: 400px solid var(--primary); opacity: 0.1; transform: rotate(15deg) translateX(100px) translateY(100px);"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-left">
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-4 py-2 text-xs font-bold uppercase tracking-wider" style="background: var(--accent); color: var(--background); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);">About Us</span>
+                        <span class="px-4 py-2 text-xs font-bold uppercase tracking-wider" style="background: var(--primary); color: white; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);">Our Story</span>
+                    </div>
+
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6" style="color: var(--accent) !important; line-height: 1.1;">
+                        Empowering Women Through Education
+                    </h1>
+
+                    <div class="w-20 h-1 mb-6" style="background: var(--primary)"></div>
+
+                    <p class="text-lg leading-relaxed mb-8" style="color: var(--foreground);">
+                        The Women's Careers Foundation (WCF) exists to support the education and vocational or professional
+                        training of girls and women who need financial assistance to complete their studies. Our founders
+                        believed that <span class="font-bold" style="color: var(--primary)">"What is Worth Having is Worth Sharing"</span>. The charity works to raise and distribute funds in
+                        the form of grants to aspiring and talented girls and women who otherwise would lack the financial
+                        means to reach their educational goals.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button class="px-8 py-3 rounded-full font-bold text-white transition-all hover:scale-105" style="background: var(--primary); ">
+                            Apply for Grant
+                        </button>
+                        <button class="px-8 py-3 rounded-full font-bold border-2 transition-all hover:scale-105" style="border-color: var(--accent); color: var(--accent);">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <!-- Main image container with angular shape -->
+                    <div class="relative">
+                        <!-- Pink triangle background -->
+                        <div class="absolute -right-10 -top-10 w-96 h-96" style="background: var(--secondary); clip-path: polygon(30% 0%, 100% 0, 100% 70%); opacity: 0.2;"></div>
+
+                        <!-- Main image -->
+                        <div class="relative overflow-hidden shadow-2xl" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);">
+                            <img src="img/jess_hopkins.webp"
+                                 alt="Supporting Scholars"
+                                 class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Info card overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between" style="background: var(--accent); clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);">
+                            <div class="text-white">
+                                <p class="text-3xl font-bold">500+</p>
+                                <p class="text-sm opacity-90">Grant Recipients</p>
+                            </div>
+                            <div class="w-px h-12" style="background: rgba(255,255,255,0.3)"></div>
+                            <div class="text-white">
+                                <p class="text-3xl font-bold">£200K+</p>
+                                <p class="text-sm opacity-90">Funds in Grants</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating decorative element -->
+                        <div class="absolute -left-8 top-1/2 w-16 h-16 transform -translate-y-1/2 rotate-45" style="background: var(--primary); opacity: 0.8;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Timeline Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden" style="background: linear-gradient(180deg, var(--background) 0%, #ffffff 50%, var(--background) 100%);">
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-0 w-64 h-64 transform rotate-45" style="background: var(--secondary); opacity: 0.05;"></div>
+        <div class="absolute bottom-20 right-0 w-96 h-96 transform rotate-45" style="background: var(--primary); opacity: 0.05;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <span class="w-12 h-0.5" style="background: var(--primary)"></span>
+                    <span class="px-4 py-2 text-xs font-bold uppercase tracking-wider" style="background: var(--accent); color: white; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);">Our Journey</span>
+                    <span class="w-12 h-0.5" style="background: var(--primary)"></span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--foreground);">
+                    <span style="color: var(--primary)">130+ Years</span> of Empowering Women
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto" style="color: var(--muted-foreground);">
+                    From a magazine's charitable initiative to a leading force in women's education support
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Central timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full" style="background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); opacity: 0.3;"></div>
+
+                <!-- 1900s - Foundation Era -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center font-bold text-white" style="background: var(--primary);">
+                                1900s
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--primary); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right animate-fade-in-left">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                Victorian Philanthropy
+                            </h3>
+                            <div class="lg:ml-auto lg:mr-0 max-w-md">
+                                <p class="mb-4 text-sm" style="color: var(--foreground);">
+                                    The Guild originated as an example of late Victorian philanthropy. S.H. Leeder started the Girls Realm Magazine in 1898 for girls of the leisured classes, becoming a means of communication for girls in isolated parts of the country who wanted to do something useful with their lives.
+                                </p>
+                                <p class="mb-4 text-sm" style="color: var(--foreground);">
+                                    The Bishop of Stepney, Dr Winnington-Ingram, suggested the magazine's readers help their poorer fellows. The charity was founded in 1900, raising funds through bazaars, entertainments and social events.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 text-xs font-bold rounded-full" style="background: rgba(241, 64, 0, 0.1); color: var(--primary);">
+                                        Girls' Realm Magazine 1898
+                                    </span>
+                                    <span class="px-3 py-1 text-xs font-bold rounded-full" style="background: rgba(249, 126, 199, 0.1); color: var(--secondary);">
+                                        Founded 1900
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right">
+                            <div class="relative">
+                                <div class="absolute inset-0 transform rotate-3 rounded-lg" style="background: var(--secondary); opacity: 0.2;"></div>
+                                <div class="relative bg-white p-6 rounded-lg shadow-xl">
+                                    <h4 class="font-bold mb-4" style="color: var(--accent);">Early Projects Supported</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--primary); opacity: 0.1;">
+                                                <i data-lucide="heart" class="w-4 h-4" style="color: var(--primary)"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold" style="color: var(--accent);">Great Ormond Street</p>
+                                                <p class="text-xs" style="color: var(--muted-foreground);">Funded a cot at Children's Hospital</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--secondary); opacity: 0.1;">
+                                                <i data-lucide="sun" class="w-4 h-4" style="color: var(--secondary)"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold" style="color: var(--accent);">Country Air Fund</p>
+                                                <p class="text-xs" style="color: var(--muted-foreground);">For delicate and invalid children</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent); opacity: 0.1;">
+                                                <i data-lucide="users" class="w-4 h-4" style="color: var(--accent)"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold" style="color: var(--accent);">Working Girls' Club</p>
+                                                <p class="text-xs" style="color: var(--muted-foreground);">Supporting working class women</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 p-3 rounded" style="background: var(--background); border: 1px dashed var(--primary);">
+                                        <p class="text-xs italic text-center" style="color: var(--accent);">
+                                            "Meeting Notes from 1915" - Historical Archive
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 1930s - Fairy Ring Era -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center font-bold text-white" style="background: var(--secondary);">
+                                1930s
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--secondary); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="animate-fade-in-left order-2 lg:order-1">
+                            <div class="relative group">
+                                <div class="absolute inset-0 transform -rotate-3 rounded-lg" style="background: var(--primary); opacity: 0.1;"></div>
+                                <div class="relative bg-white p-6 rounded-lg shadow-xl">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--secondary);">
+                                            <i data-lucide="sparkle" class="w-6 h-6" style="color: var(--secondary)"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold" style="color: var(--accent);">The Fairy Ring</h4>
+                                            <p class="text-xs" style="color: var(--muted-foreground);">Junior Branch Initiative</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 rounded-lg" style="background: var(--background);">
+                                        <p class="text-sm mb-2" style="color: var(--foreground);">
+                                            <span class="font-semibold">First Meeting:</span> Friday, January 23, 1931 at 11 o'clock
+                                        </p>
+                                        <p class="text-sm mb-2" style="color: var(--foreground);">
+                                            <span class="font-semibold">Location:</span> No. 22 Richmond Mansions
+                                        </p>
+                                        <p class="text-sm" style="color: var(--foreground);">
+                                            <span class="font-semibold">Chair:</span> Lady Henderson
+                                        </p>
+                                    </div>
+                                    <div class="mt-4 p-3 rounded" style="background: var(--background); border: 1px dashed var(--primary);">
+                                        <p class="text-xs italic text-center" style="color: var(--accent);">
+                                            "Fairy Badges Collection" - Archive Image
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right order-1 lg:order-2">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                The Fairy Ring Initiative
+                            </h3>
+                            <p class="mb-4" style="color: var(--foreground);">
+                                The Fairy Ring was established as the junior branch of the original guild, focused on providing financial support for pre-further education needs.
+                            </p>
+                            <p class="mb-4" style="color: var(--foreground);">
+                                This innovative program engaged younger supporters in the mission of educational philanthropy, creating a pipeline of future advocates for women's education.
+                            </p>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background: rgba(249, 126, 199, 0.1);">
+                                <i data-lucide="star" class="w-4 h-4" style="color: var(--secondary)"></i>
+                                <span class="text-sm font-bold" style="color: var(--secondary)">Supporting Young Learners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1939 - Growth Era -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center font-bold text-white" style="background: var(--secondary);">
+                                1939
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--secondary); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="animate-fade-in-left order-2 lg:order-1">
+                            <div class="relative group">
+                                <div class="absolute inset-0 transform -rotate-3 rounded-lg" style="background: var(--primary); opacity: 0.1;"></div>
+                                <div class="relative bg-white p-8 rounded-lg shadow-xl">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <p class="text-5xl font-bold" style="color: var(--secondary);">5,000+</p>
+                                            <p class="text-sm font-medium" style="color: var(--muted-foreground);">Active Members</p>
+                                        </div>
+                                        <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: rgba(249, 126, 199, 0.1);">
+                                            <i data-lucide="users" class="w-8 h-8" style="color: var(--secondary)"></i>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t" style="border-color: var(--border);">
+                                        <div class="flex items-center gap-4">
+                                            <div class="flex-1">
+                                                <p class="text-xs uppercase font-bold mb-1" style="color: var(--primary);">UK Centers</p>
+                                                <div class="h-2 rounded-full bg-gray-100">
+                                                    <div class="h-full rounded-full" style="width: 80%; background: var(--primary);"></div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <p class="text-xs uppercase font-bold mb-1" style="color: var(--secondary);">Australia</p>
+                                                <div class="h-2 rounded-full bg-gray-100">
+                                                    <div class="h-full rounded-full" style="width: 20%; background: var(--secondary);"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right order-1 lg:order-2">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                National Expansion
+                            </h3>
+                            <p class="mb-4" style="color: var(--foreground);">
+                                The Guild flourished with centres throughout the UK and Australia. Members raised funds through social events, establishing a trust fund for educating "poor girls of gentle birth."
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs font-bold rounded-full" style="background: rgba(249, 126, 199, 0.1); color: var(--secondary);">
+                                    Social Events
+                                </span>
+                                <span class="px-3 py-1 text-xs font-bold rounded-full" style="background: rgba(241, 64, 0, 0.1); color: var(--primary);">
+                                    Trust Fund
+                                </span>
+                                <span class="px-3 py-1 text-xs font-bold rounded-full" style="background: rgba(2, 57, 59, 0.1); color: var(--accent);">
+                                    International Reach
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1970s - Forbes-Dunlop Era -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center font-bold text-white" style="background: var(--secondary);">
+                                1970s
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--primary); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right animate-fade-in-left">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                Arts & Performance Legacy
+                            </h3>
+                            <div class="lg:ml-auto lg:mr-0 max-w-md">
+                                <p class="mb-4" style="color: var(--foreground);">
+                                    Katherine Forbes-Dunlop joined the Committee in March 1973 and later established the Forbes-Dunlop Scholarships, awarded annually to candidates undertaking performing arts courses.
+                                </p>
+                                <div class="lg:ml-auto lg:mr-0 p-4 rounded-lg" style="background: white; border-left: 4px solid var(--primary); max-width: 350px;">
+                                    <h5 class="font-bold mb-3" style="color: var(--accent);">First Scholarships Awarded</h5>
+                                    <div class="space-y-2">
+                                        <div class="flex items-start gap-2">
+                                            <i data-lucide="music" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color: var(--primary)"></i>
+                                            <div>
+                                                <p class="text-xs font-semibold" style="color: var(--accent);">Ballet Dancer</p>
+                                                <p class="text-xs" style="color: var(--muted-foreground)">Northern Ballet School</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <i data-lucide="palette" class="w-4 h-4 mt-0.5 flex-shrink-0" style="color: var(--secondary)"></i>
+                                            <div>
+                                                <p class="text-xs font-semibold" style="color: var(--accent);">Stage Designer</p>
+                                                <p class="text-xs" style="color: var(--muted-foreground)">Riverside Studio, Hammersmith</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right">
+                            <div class="relative">
+                                <div class="absolute inset-0 transform rotate-3 rounded-lg" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); opacity: 0.1;"></div>
+                                <div class="relative bg-white p-6 rounded-lg shadow-xl">
+                                    <div class="text-center mb-4">
+                                        <div class="w-20 h-20 rounded-full mx-auto mb-3 flex items-center justify-center" style="background: var(--background);">
+                                            <i data-lucide="award" class="w-10 h-10" style="color: var(--primary)"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg" style="color: var(--accent);">Katherine Forbes-Dunlop</h4>
+                                        <p class="text-sm" style="color: var(--muted-foreground);">Committee Member 1973</p>
+                                    </div>
+                                    <div class="p-3 rounded text-center" style="background: var(--background);">
+                                        <p class="text-xs font-bold mb-1" style="color: var(--primary);">PERFORMING ARTS CHAMPION</p>
+                                        <p class="text-xs" style="color: var(--foreground);">Established ongoing scholarships for artistic excellence</p>
+                                    </div>
+                                    <div class="mt-4 p-3 rounded" style="background: linear-gradient(135deg, var(--primary), var(--accent)); opacity: 0.1;">
+                                        <p class="text-xs italic text-center" style="color: var(--accent);">
+                                            "Review Cover featuring Forbes-Dunlop" - Archive
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1980s - Transformation Era -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center font-bold text-white " style="background: var(--secondary);">
+                                1980s
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--accent); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="animate-fade-in-left order-2 lg:order-1">
+                            <div class="relative">
+                                <div class="absolute inset-0 transform -rotate-3 rounded-lg" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); opacity: 0.1;"></div>
+                                <div class="relative bg-white p-6 rounded-lg shadow-xl">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent); opacity: 0.1;">
+                                            <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold" style="color: var(--accent);">New Identity</p>
+                                            <p class="text-xs" style="color: var(--muted-foreground);">Women's Careers Foundation</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <div class="p-3 rounded" style="background: var(--background);">
+                                            <p class="text-xs font-bold mb-1" style="color: var(--primary);">INCLUSIVE APPROACH</p>
+                                            <p class="text-xs" style="color: var(--foreground);">Supporting women from all backgrounds</p>
+                                        </div>
+                                        <div class="p-3 rounded" style="background: var(--background);">
+                                            <p class="text-xs font-bold mb-1" style="color: var(--secondary);">DOROTHY CARVER FUND</p>
+                                            <p class="text-xs" style="color: var(--foreground);">1985 - Flexible grants outside annual cycle</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right order-1 lg:order-2">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                Modern Transformation
+                            </h3>
+                            <div class="max-w-md">
+                                <p class="mb-3" style="color: var(--foreground);">
+                                    Adopted the name "Women's Careers Foundation" to reflect our broadened mission beyond "daughters of gentle folk" to supporting all women in need.
+                                </p>
+                                <p class="mb-4 text-sm" style="color: var(--foreground);">
+                                    <span class="font-bold">1985:</span> The first Dorothy Carver Memorial Fund awards were granted. These smaller grants were made for purposes connected with educational, professional or vocational training courses outside the annual cycle for main grants.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Today - Future Forward -->
+                <div class="relative mb-20">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="relative">
+                            <div class="w-24 h-24 rounded-full flex items-center justify-center font-bold text-white shadow-2xl" style="background: var(--primary);">
+                                TODAY
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45" style="background: var(--primary); opacity: 0.1;"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right animate-fade-in-left">
+                            <h3 class="text-3xl font-bold mb-4" style="color: var(--accent);">
+                                Grants Only Focus
+                            </h3>
+                            <div class="lg:ml-auto lg:mr-0 max-w-md">
+                                <p class="mb-4" style="color: var(--foreground);">
+                                    WCF has evolved to focus exclusively on grants. We support women pursuing post-graduate courses through comprehensive assistance including course fees, exam costs, and childcare support.
+                                </p>
+
+                                <p class="mb-4 text-sm" style="color: var(--foreground);">
+                                    The <span class="font-bold" style="color: var(--primary)">Naomie Harris Scholarship</span>, established in [INSERT DATE], provides two awards annually specifically for women from disadvantaged backgrounds.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="animate-fade-in-right">
+                            <div class="relative">
+                                <div class="absolute inset-0 transform rotate-3 rounded-lg" style="background: linear-gradient(135deg, var(--secondary), var(--primary)); opacity: 0.05;"></div>
+                                <div class="relative bg-white p-8 rounded-lg shadow-xl">
+                                    <h4 class="text-xl font-bold mb-6" style="color: var(--accent);">Our Support System</h4>
+
+                                    <div class="space-y-4">
+                                        <div class="p-4 rounded-lg" style="background: var(--background);">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <i data-lucide="graduation-cap" class="w-5 h-5" style="color: var(--primary)"></i>
+                                                <p class="font-bold text-sm" style="color: var(--accent);">Comprehensive Grant Support</p>
+                                            </div>
+                                            <p class="text-xs" style="color: var(--foreground);">Course fees, exam costs, and childcare assistance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="p-6 rounded-lg" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);">
+                                <p class="text-white font-bold mb-2">Join Our Mission</p>
+                                <p class="text-white text-sm mb-4 opacity-90">Help us continue this legacy of empowerment</p>
+                                <div class="flex gap-3">
+                                    <a href="donor_page.html" class="px-4 py-2 bg-white rounded-full text-sm font-bold hover:scale-105 transition-transform" style="color: var(--primary);">
+                                        Donate Now
+                                    </a>
+                                    <a href="get_involved.html" class="px-4 py-2 border-2 border-white rounded-full text-sm font-bold text-white hover:bg-white hover:text-primary transition-all">
+                                        Get Involved
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-16" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="animate-scale-in">
+                    <div class="text-4xl font-bold mb-2" style="color: white;">500+</div>
+                    <p style="color: white; opacity: 0.9;">Grant Recipients</p>
+                </div>
+                <div class="animate-scale-in" style="animation-delay: 0.1s;">
+                    <div class="text-4xl font-bold mb-2" style="color: white;">£200,000+</div>
+                    <p style="color: white; opacity: 0.9;">Funds in Grants</p>
+                </div>
+                <div class="animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="text-4xl font-bold mb-2" style="color: white;">124</div>
+                    <p style="color: white; opacity: 0.9;">Number of Grants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section" style="background: var(--accent); color: var(--background)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- The Foundation -->
+                <div>
+                    <h3 class="font-bold mb-4">The Foundation</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about_us.html" class="footer-link opacity-75 hover:opacity-100">Our Story</a></li>
+                        <li><a href="get_involved.html#grants" class="footer-link opacity-75 hover:opacity-100">Apply for Grant</a></li>
+                        <li><a href="get_involved.html#application" class="footer-link opacity-75 hover:opacity-100">Application Process</a></li>
+                        <li><a href="about_us.html#support" class="footer-link opacity-75 hover:opacity-100">Government Supports</a></li>
+                        <li><a href="about_us.html#stories" class="footer-link opacity-75 hover:opacity-100">Success Stories</a></li>
+                        <li><a href="contact_us.html#faq" class="footer-link opacity-75 hover:opacity-100">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Us -->
+                <div>
+                    <h3 class="font-bold mb-4">Support Us</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="get_involved.html#membership" class="footer-link opacity-75 hover:opacity-100">Become a Member</a></li>
+                        <li><a href="donor_page.html" class="footer-link opacity-75 hover:opacity-100">Ways to Donate</a></li>
+                        <li><a href="contact_us.html#corporate" class="footer-link opacity-75 hover:opacity-100">Corporate Sponsorship</a></li>
+                        <li><a href="get_involved.html" class="footer-link opacity-75 hover:opacity-100">Volunteer</a></li>
+                        <li><a href="get_involved.html#events" class="footer-link opacity-75 hover:opacity-100">Partner Events</a></li>
+                        <li><a href="donor_page.html#legacy" class="footer-link opacity-75 hover:opacity-100">Legacy Giving</a></li>
+                    </ul>
+                </div>
+                
+                <!-- About Us -->
+                <div>
+                    <h3 class="font-bold mb-4">About Us</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about_us.html" class="footer-link opacity-75 hover:opacity-100">Our Mission</a></li>
+                        <li><a href="about_us.html#report" class="footer-link opacity-75 hover:opacity-100">Annual Report</a></li>
+                        <li><a href="meet_the_team.html" class="footer-link opacity-75 hover:opacity-100">Leadership Team</a></li>
+                        <li><a href="#newsletter" class="footer-link opacity-75 hover:opacity-100">Newsletter</a></li>
+                        <li><a href="about_us.html#updates" class="footer-link opacity-75 hover:opacity-100">Latest Updates</a></li>
+                        <li><a href="contact_us.html" class="footer-link opacity-75 hover:opacity-100">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold mb-4">Contact</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="opacity-75">The Secretary</p>
+                            <p class="opacity-75">79 Grosvenor Road</p>
+                            <p class="opacity-75">London SW1V 3PL</p>
+                        </div>
+                        <div>
+                            <p class="opacity-75">enquiries@wcf.org.uk</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t text-center text-sm opacity-75" style="border-color: rgba(254, 247, 241, 0.2)">
+                <p>© 2024 Women's Careers Foundation | Registered Charity No: 313149</p>
+                <p class="mt-2">
+                    <a href="#" class="footer-link">Privacy Policy</a> | 
+                    <a href="#" class="footer-link">Accessibility</a> | 
+                    <a href="#" class="footer-link">Terms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Toggle menu
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+
+                    // Re-initialize Lucide icons
+                    setTimeout(() => lucide.createIcons(), 10);
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && !mobileMenu.contains(event.target) &&
+                    mobileMenuBtn && !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    if (menuIcon) menuIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+
+                    // Re-initialize icons
+                    setTimeout(() => lucide.createIcons(), 10);
+                }
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('[class*="animate-"]').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+        }); // Close DOMContentLoaded
+    </script>
+
+    <!-- Alternative donate button floating -->
+    <a href="donor_page.html" class="fixed bottom-8 right-8 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group" style="border: 2px solid var(--accent); z-index: 50;">
+        <i data-lucide="heart" class="w-5 h-5" style="color: var(--accent)"></i>
+        <span style="color: var(--accent); font-weight: 600;">Donate</span>
+    </a>
+</body>
+</html>

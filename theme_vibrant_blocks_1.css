@@ -1,0 +1,76 @@
+/* Vibrant Blocks Theme - Based on the provided color palette image */
+/* Colors: Cream (#fef7f1), Orange (#f14000), Pink (#f97ec7), Teal (#02393b) */
+:root {
+  --background: #fef7f1;  /* Cream/off-white background */
+  --foreground: #02393b; /* Deep teal for text */
+  --card: #fef7f1;  /* Use cream for card backgrounds too */
+  --card-foreground: #02393b;
+  --popover: #fef7f1;  /* Use cream for popovers */
+  --popover-foreground: #02393b;
+  --primary: #f14000;  /* Vibrant orange */
+  --primary-foreground: #ffffff;
+  --secondary: #f97ec7; /* Vibrant pink */
+  --secondary-foreground: #02393b;
+  --muted: #fef7f1;
+  --muted-foreground: #5a6668;
+  --accent: #02393b;  /* Deep teal accent */
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5d9d0;
+  --input: #f5ebe2;
+  --ring: #f14000;
+  
+  /* Chart colors using the palette */
+  --chart-1: #f14000;  /* Orange */
+  --chart-2: #f97ec7; /* Pink */
+  --chart-3: #02393b; /* Teal */
+  --chart-4: #fef7f1;  /* Cream */
+  --chart-5: #d63600;   /* Darker orange variant */
+  
+  /* Sidebar colors */
+  --sidebar: #fef7f1;
+  --sidebar-foreground: #02393b;
+  --sidebar-primary: #f14000;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #02393b;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5d9d0;
+  --sidebar-ring: #f14000;
+  
+  /* Typography */
+  --font-sans: 'DM Sans', 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  /* Border radius - modern, rounded */
+  --radius: 0.5rem;
+  
+  /* Shadows with subtle tint */
+  --shadow-2xs: 0 1px 2px 0px rgba(2, 57, 59, 0.05);
+  --shadow-xs: 0 1px 3px 0px rgba(2, 57, 59, 0.07);
+  --shadow-sm: 0 2px 4px 0px rgba(2, 57, 59, 0.07), 0 1px 2px -1px rgba(2, 57, 59, 0.05);
+  --shadow: 0 4px 6px -1px rgba(2, 57, 59, 0.07), 0 2px 4px -2px rgba(2, 57, 59, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(2, 57, 59, 0.07), 0 4px 6px -4px rgba(2, 57, 59, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(2, 57, 59, 0.07), 0 8px 10px -6px rgba(2, 57, 59, 0.05);
+  --shadow-xl: 0 25px 50px -12px rgba(2, 57, 59, 0.10);
+  --shadow-2xl: 0 35px 60px -15px rgba(2, 57, 59, 0.15);
+  
+  /* Spacing and tracking */
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  
+  /* Radius variants */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Removed dark mode to maintain consistent colors */
+/* The design will always use the light theme colors:
+   - Cream background (#fef7f1)
+   - Teal text (#02393b)
+   - Orange accents (#f14000)
+   - Pink secondary (#f97ec7)
+*/

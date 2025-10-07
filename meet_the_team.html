@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team - Women's Careers Foundation</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/cxg4xgz.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme_vibrant_blocks_1.css">
+    
+    <style>
+        /* Import theme colors */
+        @import url('theme_vibrant_blocks_1.css');
+        
+        /* Custom styles */
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: var(--font-sans);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            color: var(--foreground) !important;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.6s ease-out;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Button Styles */
+        .btn {
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile Menu Styles */
+        #mobileMenu {
+            transition: all 0.3s ease-in-out;
+            transform-origin: top;
+        }
+
+        #mobileMenu:not(.hidden) {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mobileMenuBtn {
+            position: relative;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease;
+        }
+
+        #mobileMenuBtn:hover {
+            background-color: var(--background);
+        }
+
+        #mobileMenu a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #mobileMenu a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.3s ease;
+        }
+
+        #mobileMenu a:hover::before {
+            height: 70%;
+        }
+        
+        /* Team Member Card Styles */
+        .team-card {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .team-card .avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--background);
+            font-size: 2.5rem;
+        }
+        
+        .role-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent);
+            color: var(--background);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Patron Section Styles */
+        .patron-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .patron-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+        .bg-primary {
+            background-color: var(--primary) !important;  /* Orange #f14000 */
+        }
+        .patron-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 1rem;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent);
+        }
+        
+        .quote-box {
+            background: rgba(254, 247, 241, 0.1);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--background);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        
+
+        
+        /* Impact Cards */
+        .impact-card {
+            background: var(--card);
+            border: 1px dashed var(--border);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            border-style: solid;
+            border-color: var(--primary);
+            background: var(--background);
+        }
+        
+        /* Footer styles */
+        .footer-link {
+            transition: color 0.2s ease;
+            color: var(--background) !important;
+            opacity: 0.9;
+        }
+        
+        .footer-link:hover {
+            color: white !important;
+            opacity: 1;
+        }
+        
+        .footer-section {
+            background: var(--accent) !important;
+        }
+        
+        /* Header sticky shadow */
+        header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Board Member Card - Variant 1A */
+        .board-card-1a {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .board-card-1a:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        /* Image Container */
+        .board-card-1a .image-container {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+            background: var(--muted);
+        }
+
+        .board-card-1a .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .board-card-1a:hover .image-container img {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+
+        /* Content Area */
+        .board-card-1a .content {
+            padding: 1.25rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .board-card-1a .name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        /* Role tag for board cards */
+        .board-card-1a .role-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent);
+            color: var(--background);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .board-card-1a .read-more {
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .board-card-1a .read-more:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Full Bio Modal Overlay */
+        .bio-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .bio-modal.active {
+            display: flex;
+        }
+
+        .bio-modal-content {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='300' height='500' viewBox='0 0 300 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.80'%3E%3Cpath d='M 50 0 L 150 100 L 50 200 L -50 100 Z' fill='%23F873C0'/%3E%3Cpath d='M 50 150 L 150 250 L 50 350 L -50 250 Z' fill='%23F873C0'/%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='300' height='500' viewBox='0 0 300 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.80'%3E%3Cpath d='M 250 150 L 350 250 L 250 350 L 150 250 Z' fill='%23F873C0'/%3E%3Cpath d='M 250 0 L 350 100 L 250 200 L 150 100 Z' fill='%23F873C0'/%3E%3C/g%3E%3C/svg%3E");
+            background-position:
+                top -50px left -100px,
+                bottom -50px right -100px;
+            background-repeat: no-repeat;
+            background-size: 300px auto, 300px auto;
+        }
+
+        .bio-modal-content .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--muted);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .bio-modal-content .close-btn:hover {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            transform: rotate(90deg);
+        }
+
+        .bio-modal-content .name {
+            font-family: var(--font-sans) !important;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--foreground) !important;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-modal-content .role-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--background);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-modal-content .role {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--accent-foreground);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-modal-content .full-bio {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--foreground);
+        }
+
+        /* Animations for modal */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Grid Layout */
+        .board-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Responsive grid: 1 col mobile, 2 col tablet, 4 col desktop */
+        @media (min-width: 768px) {
+            .board-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .board-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .board-card-1a {
+                height: auto;
+            }
+
+            .board-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 transition-shadow duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center mr-3">
+                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Group 1">
+                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider">Women's Careers Foundation</h3>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="transition hover:text-primary" style="color: var(--foreground)">Home</a>
+                    <a href="about_us.html" class="transition hover:text-primary" style="color: var(--foreground)">About Us</a>
+                    <a href="meet_the_team.html" class="transition hover:text-primary" style="color: var(--foreground)">Meet the Team</a>
+                    <a href="get_involved.html" class="transition hover:text-primary" style="color: var(--foreground)">Get Involved</a>
+                    <a href="contact_us.html" class="transition hover:text-primary" style="color: var(--foreground)">Contact</a>
+                    <a href="donor_page.html" class="px-6 py-2 rounded-full text-white btn" style="background: var(--primary)">Apply</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+                    <i data-lucide="x" class="w-6 h-6 hidden" id="closeIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="hidden md:hidden" id="mobileMenu">
+            <div class="px-4 py-3 space-y-1 bg-white border-t" style="border-color: var(--border);">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Home</a>
+                <a href="about_us.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">About Us</a>
+                <a href="meet_the_team.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground); background: var(--background);">Meet the Team</a>
+                <a href="get_involved.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Get Involved</a>
+                <a href="contact_us.html" class="block px-3 py-2 rounded-md text-base font-medium transition hover:bg-gray-50" style="color: var(--foreground);">Contact</a>
+                <div class="pt-3">
+                    <a href="donor_page.html" class="block px-6 py-3 rounded-full text-white text-center font-bold" style="background: var(--primary);">Apply</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden" style="background: linear-gradient(135deg, var(--background) 0%, #ffffff 100%);">
+        <!-- Geometric decorative shapes -->
+        <div class="absolute top-0 left-0 w-0 h-0" style="border-left: 400px solid transparent; border-top: 400px solid var(--secondary); opacity: 0.08; transform: rotate(-25deg) translateX(-150px) translateY(-150px);"></div>
+        <div class="absolute bottom-0 right-0 w-0 h-0" style="border-right: 500px solid transparent; border-bottom: 500px solid var(--primary); opacity: 0.06; transform: rotate(15deg) translateX(100px) translateY(100px);"></div>
+        <div class="absolute top-1/2 left-0 w-32 h-32 transform -translate-y-1/2 rotate-45" style="background: var(--accent); opacity: 0.05;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="animate-fade-in-left">
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-4 py-2 text-xs font-bold uppercase tracking-wider" style="background: var(--primary); color: white; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);">Leadership</span>
+                        <span class="px-4 py-2 text-xs font-bold uppercase tracking-wider" style="background: var(--accent); color: var(--background); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);">Excellence</span>
+                    </div>
+
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6" style="color: var(--accent) !important; line-height: 1.1;">
+                        Meet Our Dedicated Team
+                    </h1>
+
+                    <div class="w-20 h-1 mb-6" style="background: var(--primary)"></div>
+
+                    <p class="text-lg leading-relaxed mb-4" style="color: var(--foreground);">
+                        Behind every grant, every success story, and every empowered woman stands our passionate team of trustees, patrons, and volunteers.
+                    </p>
+
+                    <p class="text-base mb-8" style="color: var(--muted-foreground);">
+                        Our board brings together decades of experience in education, finance, and social impact, united by a shared commitment to breaking down barriers to women's education.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-3 px-4 py-3 rounded-lg" style="background: var(--background);">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
+                                <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold" style="color: var(--accent);">8</p>
+                                <p class="text-xs uppercase" style="color: var(--muted-foreground);">Board Members</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 px-4 py-3 rounded-lg" style="background: var(--background);">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
+                                <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold" style="color: var(--primary);">100+</p>
+                                <p class="text-xs uppercase" style="color: var(--muted-foreground);">Years Combined</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <!-- Background accent shape -->
+                        <div class="absolute -right-10 -top-10 w-96 h-96" style="background: var(--secondary); clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); opacity: 0.15;"></div>
+
+                        <!-- Main content card -->
+                        <div class="relative bg-white rounded-2xl p-8 shadow-2xl" style="border: 2px solid var(--border);">
+                            <h3 class="text-2xl font-bold mb-6" style="color: var(--accent);">Our Values</h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--primary); opacity: 0.1;">
+                                        <i data-lucide="target" class="w-4 h-4" style="color: var(--primary)"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1" style="color: var(--foreground);">Empowerment</h4>
+                                        <p class="text-sm" style="color: var(--muted-foreground);">Breaking barriers to education and career advancement</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--secondary); opacity: 0.1;">
+                                        <i data-lucide="shield" class="w-4 h-4" style="color: var(--secondary)"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1" style="color: var(--foreground);">Integrity</h4>
+                                        <p class="text-sm" style="color: var(--muted-foreground);">Transparent governance and ethical stewardship</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--accent); opacity: 0.1;">
+                                        <i data-lucide="sparkles" class="w-4 h-4" style="color: var(--accent)"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1" style="color: var(--foreground);">Excellence</h4>
+                                        <p class="text-sm" style="color: var(--muted-foreground);">Committed to impactful and lasting change</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-6 border-t" style="border-color: var(--border);">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-bold" style="color: var(--primary);">Est. 1900</span>
+                                    <span class="text-sm" style="color: var(--muted-foreground);">124 Years of Service</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating decorative element -->
+                        <div class="absolute -left-6 bottom-10 w-12 h-12 transform rotate-45" style="background: var(--primary); opacity: 0.7;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Trustees Section -->
+    <section id="board" class="py-20 lg:py-32" style="background-color: var(--background);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-4xl lg:text-5xl font-bold" style="color: var(--foreground);">
+                    Board of Trustees
+                </h2>
+            </div>
+
+            <!-- Board Members Grid -->
+            <div class="board-grid">
+            <!-- Maggie Goodall -->
+            <div class="board-card-1a animate-scale-in">
+                <div class="image-container">
+                    <img src="img/team/maggie-goodall/maggie-goodall.jpg" alt="Maggie Goodall">
+                </div>
+                <div class="content">
+                    <h3 class="name">Maggie Goodall</h3>
+                    <span class="role-tag">President</span>
+                    <span class="read-more" onclick="openBio('maggie')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Ross Crail -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.1s;">
+                <div class="image-container">
+                    <img src="img/team/ross-crail/ross-crail.jpg" alt="Ross Crail">
+                </div>
+                <div class="content">
+                    <h3 class="name">Ross Crail</h3>
+                    <span class="role-tag">Chairman</span>
+                    <span class="read-more" onclick="openBio('ross')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Maurine Lewin -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.2s;">
+                <div class="image-container">
+                    <img src="img/team/maurine-lewin/maurine-lewin.jpg" alt="Maurine Lewin">
+                </div>
+                <div class="content">
+                    <h3 class="name">Maurine Lewin</h3>
+                    <span class="role-tag">Vice-Chairman</span>
+                    <span class="read-more" onclick="openBio('maurine')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Hilary Pearson -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.3s;">
+                <div class="image-container">
+                    <img src="img/team/hilary-pearson/HILARY-PEARSON.JPG" alt="Hilary Pearson">
+                </div>
+                <div class="content">
+                    <h3 class="name">Hilary Pearson</h3>
+                    <span class="role-tag">Treasurer</span>
+                    <span class="read-more" onclick="openBio('hilary')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Janine Harris -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.4s;">
+                <div class="image-container">
+                    <img src="img/team/janine-harris/janine-harris.jpg" alt="Janine Harris">
+                </div>
+                <div class="content">
+                    <h3 class="name">Janine Harris</h3>
+                    <span class="role-tag">Trustee</span>
+                    <span class="read-more" onclick="openBio('janine')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Bobbie Makoni -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.5s;">
+                <div class="image-container">
+                    <img src="img/team/bobbie-makoni/BOBBIE-MAKONI.png" alt="Bobbie Makoni">
+                </div>
+                <div class="content">
+                    <h3 class="name">Bobbie Makoni</h3>
+                    <span class="role-tag">Trustee</span>
+                    <span class="read-more" onclick="openBio('bobbie')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Angela Pamely -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.6s;">
+                <div class="image-container">
+                    <img src="img/team/angela-pamely/angela-pamely.jpg" alt="Angela Pamely">
+                </div>
+                <div class="content">
+                    <h3 class="name">Angela Pamely</h3>
+                    <span class="role-tag">Trustee</span>
+                    <span class="read-more" onclick="openBio('angela')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Charlotte Robbins -->
+            <div class="board-card-1a animate-scale-in" style="animation-delay: 0.7s;">
+                <div class="image-container">
+                    <img src="img/team/charlotte-robbins/charlotte-robbins.JPG" alt="Charlotte Robbins">
+                </div>
+                <div class="content">
+                    <h3 class="name">Charlotte Robbins</h3>
+                    <span class="role-tag">Trustee</span>
+                    <span class="read-more" onclick="openBio('charlotte')">
+                        Read Bio
+                        <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                    </span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patron Section -->
+    <section id="patron" class="py-20 lg:py-32" style="background-color: var(--primary);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-fade-in-up">
+                <h2 class="text-4xl lg:text-5xl font-bold" style="color: white;">
+                    OUR DISTINGUISHED PATRON
+                </h2>
+            </div>
+            
+            <div class="patron-card">
+                <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div class="animate-fade-in-left">
+                        <div class="patron-image mx-auto lg:mx-0">
+                            <i data-lucide="user" class="w-24 h-24"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 text-center lg:text-left">Naomie Harris OBE</h3>
+                        <p class="text-center lg:text-left opacity-90">PATRON PORTRAIT</p>
+                    </div>
+                    
+                    <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <h3 class="text-3xl font-bold mb-4">Naomie Harris OBE</h3>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: var(--foreground); color: var(--background);">ACTOR</span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: var(--background); color: var(--foreground);">SUPPORTER</span>
+                        </div>
+                        
+                        <p class="mb-6 opacity-95">
+                            [BIO TEXT] Award-winning actress and former grant recipient. Started career in 1987, now internationally 
+                            acclaimed for roles in James Bond, Moonlight, and Pirates of the Caribbean.
+                        </p>
+                        
+                        <div class="quote-box">
+                            <p class="text-lg">
+                                "The Women's Careers Foundation made a real difference at the beginning of my career, helping me to complete my training and 
+                                take a big step towards my dream..."
+                            </p>
+                            <p class="text-right mt-3 font-bold">— NAOMIE HARRIS OBE</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impact Cards -->
+                <div class="grid md:grid-cols-2 gap-6 mt-12">
+                    <div class="impact-card animate-scale-in" style="animation-delay: 0.3s;">
+                        <h4 class="font-bold mb-2" style="color: var(--foreground);">CAREER IMPACT</h4>
+                        <p class="text-sm" style="color: var(--muted-foreground);">[Impact description]</p>
+                    </div>
+                    <div class="impact-card animate-scale-in" style="animation-delay: 0.4s;">
+                        <h4 class="font-bold mb-2" style="color: var(--foreground);">GIVING BACK</h4>
+                        <p class="text-sm" style="color: var(--muted-foreground);">[Impact description]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20" style="background: #ffffff">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">JOIN OUR COMMUNITY</h2>
+            <p class="mb-8" style="color: var(--muted-foreground)">
+                Get updates on application deadlines, events, and success stories
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" 
+                       class="flex-1 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2" 
+                       style="border-color: var(--border); focus:ring-color: var(--primary)">
+                <button type="submit" class="btn px-8 py-3 rounded-lg text-white" style="background: var(--primary)">
+                    Subscribe
+                </button>
+            </form>
+            <div class="flex justify-center gap-6 mt-8">
+                <a href="#" class="text-sm" style="color: var(--muted-foreground)">Privacy</a>
+                <a href="#" class="text-sm" style="color: var(--muted-foreground)">Terms</a>
+                <a href="#" class="text-sm" style="color: var(--muted-foreground)">Facebook</a>
+                <a href="#" class="text-sm" style="color: var(--muted-foreground)">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section" style="background: var(--accent); color: var(--background)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- The Foundation -->
+                <div>
+                    <h3 class="font-bold mb-4">THE FOUNDATION</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Our Story</a></li>
+                        <li><a href="form.html" class="footer-link opacity-75 hover:opacity-100">Apply for Grant</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Application Process</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Government Supports</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Success Stories</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Us -->
+                <div>
+                    <h3 class="font-bold mb-4">SUPPORT US</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Become a Member</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Ways & Donation</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Corporate Sponsorship</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Volunteer</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Partner Events</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Legacy Giving</a></li>
+                    </ul>
+                </div>
+                
+                <!-- About Us -->
+                <div>
+                    <h3 class="font-bold mb-4">ABOUT US</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Our Mission</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Annual Report</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Leadership Team</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Newsletter</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Make a Update</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold mb-4">CONTACT</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="opacity-75">The Secretary</p>
+                            <p class="opacity-75">79 Grosvenor Road</p>
+                            <p class="opacity-75">London SW1V 3PL</p>
+                        </div>
+                        <div>
+                            <p class="opacity-75">enquiries@wcf.org.uk</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t text-center text-sm opacity-75" style="border-color: rgba(254, 247, 241, 0.2)">
+                <p>© 2024 Women's Careers Foundation | Registered Charity No: 313149</p>
+                <p class="mt-2">
+                    <a href="#" class="footer-link">Privacy Policy</a> | 
+                    <a href="#" class="footer-link">Accessibility</a> | 
+                    <a href="#" class="footer-link">Terms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Toggle menu
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+
+                    // Re-initialize Lucide icons
+                    setTimeout(() => lucide.createIcons(), 10);
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (mobileMenu && !mobileMenu.contains(event.target) &&
+                    mobileMenuBtn && !mobileMenuBtn.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    if (menuIcon) menuIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+
+                    // Re-initialize icons
+                    setTimeout(() => lucide.createIcons(), 10);
+                }
+            });
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('[class*="animate-"]').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+
+            // Bio modal functions - make them globally accessible
+            window.openBio = function(memberId) {
+                const modal = document.getElementById('modal-' + memberId);
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    // Re-initialize icons in modal
+                    setTimeout(() => lucide.createIcons(), 10);
+                }
+            }
+
+            window.closeBio = function(memberId) {
+                const modal = document.getElementById('modal-' + memberId);
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            window.closeModal = function(event, memberId) {
+                if (event.target.classList.contains('bio-modal')) {
+                    closeBio(memberId);
+                }
+            }
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    document.querySelectorAll('.bio-modal.active').forEach(modal => {
+                        const memberId = modal.id.replace('modal-', '');
+                        closeBio(memberId);
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Alternative donate button floating -->
+    <a href="donor_page.html" class="fixed bottom-8 right-8 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group" style="border: 2px solid var(--accent); z-index: 50;">
+        <i data-lucide="heart" class="w-5 h-5" style="color: var(--accent)"></i>
+        <span style="color: var(--accent); font-weight: 600;">Donate</span>
+    </a>
+
+    <!-- Bio Modals -->
+    <div class="bio-modal" id="modal-maggie" onclick="closeModal(event, 'maggie')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('maggie')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Maggie Goodall</h3>
+            <span class="role-tag">President</span>
+            <p class="full-bio">Maggie is an experienced heritage professional, working in historic buildings casework and advice, traditional building skills training, outreach and engagement, and volunteer management in the sector for over 20 years. She is an alumna of the Women's Careers Foundation, which generously gave her a grant towards her Masters in Heritage Management early in her career. After serving for 10 years on the WCF's Executive Committee, she was honoured to be invited to become the charity's President in 2022.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-ross" onclick="closeModal(event, 'ross')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('ross')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Ross Crail</h3>
+            <span class="role-tag">Chairman</span>
+            <p class="full-bio">Ross has worked in financial services all of his career, first as an accountant at PwC and then in corporate finance and investment banking. Now a Director at Houlihan Lokey, Ross leads the origination of M&A and capital raising transactions in the sports sector. Ross joined the WCF as Chair in February 2020 and has overall responsibility for the successful administration of the charity.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-maurine" onclick="closeModal(event, 'maurine')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('maurine')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Maurine Lewin</h3>
+            <span class="role-tag">Vice-Chairman</span>
+            <p class="full-bio">Maurine Lewin is a retired human rights lawyer and campaigner. She has worked as a civil servant in Sierra Leone and as a lawyer in a number of international organisations, including the United Nations High Commissioner for Refugees, the Commonwealth Secretariat and the Civil Liberties Trust. Later, she ran her own legal consultancy, specialising in gender, forced migration and violence against women. Maurine cares passionately about women's and girls' rights, particularly in the spheres of education and employment.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-hilary" onclick="closeModal(event, 'hilary')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('hilary')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Hilary Pearson</h3>
+            <span class="role-tag">Treasurer</span>
+            <p class="full-bio">Hilary was a stockbroker for many years, one of the first six women to be admitted to the London Stock Exchange in 1973. She learned about the Girls of the Realm Guild (as it was then) and was persuaded by the chairman to join the committee. In due course her financial background made her the natural successor to the retiring treasurer. Appreciating how fortunate she was, she is very keen to help students lacking the funds for further education. Having spent many years in London, she now lives in the country where she supports local charities such as a hospice and a group looking after Ukrainian refugees.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-janine" onclick="closeModal(event, 'janine')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('janine')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Janine Harris</h3>
+            <span class="role-tag">Trustee</span>
+            <p class="full-bio">Janine has been involved with the WCF since 2013, having first heard about the charity through her Aunt, Beth Hayward, who was the WCF secretary from 1980 until November 2020. Previously, Janine worked for the charity PDSA which is a wonderful organisation doing a brilliant job for distressed animals (and humans too!) Janine enjoys painting, drawing, reading and music, gardening, dog walking and anything that gets her out in the countryside.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-bobbie" onclick="closeModal(event, 'bobbie')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('bobbie')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Bobbie Makoni</h3>
+            <span class="role-tag">Trustee</span>
+            <p class="full-bio">Bobbie Makoni is a sports media executive who has worked in the UK, Europe, and across Africa, creating and delivering content for major sports leagues. Bobbie was introduced to WCF by her former head teacher Alexandra Eversole who also sat on the board for a number of years. Bobbie is passionate about empowering and providing opportunities for young people. Outside of work Bobbie is a keen tennis player and enjoys frequent visits to the theatre.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-angela" onclick="closeModal(event, 'angela')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('angela')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Angela Pamely</h3>
+            <span class="role-tag">Trustee</span>
+            <p class="full-bio">Angela worked for the civil service for 22 years, much of this time on criminal justice issues. She carried out a secondment to Napo, the probation officers' trade union and professional association where she worked closely with the CEO and the National Chair on a restructuring of the organisation. On leaving the civil service, she trained as a mediator and now undertakes freelance mediation work. Angela also volunteers at two other charities.</p>
+        </div>
+    </div>
+
+    <div class="bio-modal" id="modal-charlotte" onclick="closeModal(event, 'charlotte')">
+        <div class="bio-modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeBio('charlotte')">
+                <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+            </button>
+            <h3 class="name">Charlotte Robbins</h3>
+            <span class="role-tag">Trustee</span>
+            <p class="full-bio">Charlotte first learnt about the WCF as a sixth form student when her headteacher encouraged her to apply. She successfully obtained a grant which helped to fund her nursing degree. Now a Practice Development Nurse at an NHS hospital, Charlotte joined the WCF's Executive Committee in 2023. She is keen to give back to this wonderful charity which helped make her career ambitions come true.</p>
+        </div>
+    </div>
+
+</body>
+</html>
