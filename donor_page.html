@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Donor - Women's Careers Foundation</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/cxg4xgz.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- QR Code Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme_vibrant_blocks_1.css">
+    
+    <style>
+        /* Import theme colors */
+        @import url('theme_vibrant_blocks_1.css');
+        
+        /* Custom Styles */
+        body {
+            font-family: "filson-pro", "DM Sans", "Inter", system-ui, sans-serif !important;
+            background: var(--background);
+            color: var(--foreground);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Button Styles */
+        .btn {
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .bg-primary {
+            background-color: var(--primary) !important;  /* Orange #f14000 */
+        }
+        /* Process Step Circles */
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .step-circle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Donation Amount Cards */
+        .amount-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .amount-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .amount-card.selected {
+            background: var(--primary) !important;
+            color: white !important;
+        }
+        
+        /* FAQ Items */
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-content.open {
+            max-height: 200px;
+        }
+        
+        /* Section Backgrounds */
+        .hero-section {
+            background: linear-gradient(135deg, var(--background) 0%, white 100%);
+        }
+        
+        .process-section {
+            background: var(--accent);
+        }
+        
+        .faq-section {
+            background: var(--background);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        /* Decorative Elements */
+        .decoration-square {
+            position: absolute;
+            transform: rotate(45deg);
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="bg-white sticky top-0 z-50 transition-shadow duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center mr-3">
+                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Group 1">
+                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider">Women's Careers Foundation</h3>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="transition hover:text-primary" style="color: var(--foreground)">Home</a>
+                    <a href="about_us.html" class="transition hover:text-primary" style="color: var(--foreground)">About Us</a>
+                    <a href="meet_the_team.html" class="transition hover:text-primary" style="color: var(--foreground)">Meet the Team</a>
+                    <a href="get_involved.html" class="transition hover:text-primary" style="color: var(--foreground)">Get Involved</a>
+                    <a href="contact_us.html" class="transition hover:text-primary" style="color: var(--foreground)">Contact</a>
+                    <a href="donor_page.html" class="px-6 py-2 rounded-full text-white btn" style="background: var(--primary)">Apply</a>
+                </nav>
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-20 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="decoration-square" style="width: 300px; height: 300px; background: var(--secondary); top: -100px; right: -100px;"></div>
+        <div class="decoration-square" style="width: 200px; height: 200px; background: var(--primary); bottom: -50px; left: -50px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center animate-fade-in-up">
+                <h1 class="text-5xl font-bold mb-4" style="font-family: var(--font-serif); color: var(--accent)">
+                    Become a Donor
+                </h1>
+                <div class="w-20 h-1 mx-auto mb-8" style="background: var(--primary)"></div>
+                
+                <p class="text-lg max-w-3xl mx-auto mb-12" style="color: var(--foreground)">
+                    We are grateful for our members' and donors' generosity, which helps us in our mission to support more girls and women 
+                    to achieve their education and career goals. Donations help us to give more grants and strengthen our financial 
+                    foundations for the future.
+                </p>
+                
+                
+                <!-- Enhanced Donation Form -->
+                <div class="mt-10 max-w-xl mx-auto">
+                    <!-- Donation Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                        <!-- Choose Amount Header -->
+                        <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--accent)">Choose Amount</h3>
+
+                        <!-- Donation Type Toggle -->
+                        <div class="flex justify-center mb-5">
+                            <div class="inline-flex rounded-full p-0.5" style="background: #e8e8e8;">
+                                <button id="one-time-btn" class="donation-type-btn px-5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200" style="background: white; color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,0.1);">
+                                    One-Time Donation
+                                </button>
+                                <button id="monthly-btn" class="donation-type-btn px-5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200" style="color: #666;">
+                                    Monthly Support 💚
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Custom Amount Input -->
+                        <div class="mb-5">
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold" style="color: var(--accent)">£</span>
+                                <input type="number" value="50" min="1" class="w-full pl-12 pr-16 py-3 text-2xl font-bold rounded-xl border focus:outline-none transition-all duration-200" style="border-color: #ddd; color: var(--accent); focus:border-color: var(--primary);">
+                                <select class="absolute right-2 top-1/2 transform -translate-y-1/2 px-2 py-0.5 text-sm rounded border font-medium" style="border-color: #ddd; color: var(--accent);">
+                                    <option>GBP</option>
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Quick Amount Buttons -->
+                        <div class="grid grid-cols-4 gap-2 mb-5">
+                            <button class="amount-option group relative overflow-hidden rounded-lg py-3 px-4 border transition-all duration-200 hover:scale-105" style="border-color: #ddd;">
+                                <span class="relative z-10 font-semibold text-sm" style="color: var(--accent)">£10</span>
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);"></div>
+                                <span class="absolute inset-0 opacity-0 group-hover:opacity-100 text-white font-semibold text-sm flex items-center justify-center transition-opacity duration-200">£10</span>
+                            </button>
+                            <button class="amount-option group relative overflow-hidden rounded-lg py-3 px-4 border transition-all duration-200 hover:scale-105" style="border-color: #ddd;">
+                                <span class="relative z-10 font-semibold text-sm" style="color: var(--accent)">£25</span>
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);"></div>
+                                <span class="absolute inset-0 opacity-0 group-hover:opacity-100 text-white font-semibold text-sm flex items-center justify-center transition-opacity duration-200">£25</span>
+                            </button>
+                            <button class="amount-option group relative overflow-hidden rounded-lg py-3 px-4 border transition-all duration-200 hover:scale-105 selected" style="border-color: var(--primary); background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);">
+                                <span class="font-semibold text-sm text-white">£50</span>
+                            </button>
+                            <button class="amount-option group relative overflow-hidden rounded-lg py-3 px-4 border transition-all duration-200 hover:scale-105" style="border-color: #ddd;">
+                                <span class="relative z-10 font-semibold text-sm" style="color: var(--accent)">£100</span>
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);"></div>
+                                <span class="absolute inset-0 opacity-0 group-hover:opacity-100 text-white font-semibold text-sm flex items-center justify-center transition-opacity duration-200">£100</span>
+                            </button>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t my-4" style="border-color: #f0f0f0;"></div>
+
+                        <!-- Donor Information -->
+                        <div class="space-y-3 mb-4">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-2.5 w-4 h-4 rounded" style="accent-color: var(--primary);">
+                                <span class="text-sm font-medium" style="color: var(--accent)">Donate Anonymously</span>
+                            </label>
+
+                            <input type="text" placeholder="Your Name (optional)" class="w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-all duration-200" style="border-color: #ddd; focus:border-color: var(--primary);">
+                        </div>
+
+                        <!-- Terms Checkbox -->
+                        <div class="mb-5">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" checked class="mr-2.5 mt-0.5 w-4 h-4 rounded" style="accent-color: var(--primary);">
+                                <span class="text-xs leading-relaxed" style="color: #666;">
+                                    I agree to the <a href="#" class="underline font-medium" style="color: var(--primary);">Terms</a> and understand my donation supports WCF's mission
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-2">
+                            <button onclick="processPayPalDonation()" class="w-full py-3 rounded-full font-bold text-sm text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);">
+                                Donate Now
+                            </button>
+                            <button onclick="showQRCode()" class="w-full py-2.5 rounded-full font-medium text-sm border transition-all duration-200 hover:scale-[1.02]" style="border-color: #ddd; color: #666;">
+                                Use QR Code
+                            </button>
+                        </div>
+
+                        <!-- Impact Message -->
+                        <div class="mt-4 text-center p-2.5 rounded-lg" style="background: #fef7f1;">
+                            <p class="text-xs font-medium" style="color: var(--accent)">
+                                💡 <strong>£50</strong> could provide essential textbooks for a student's entire semester
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code Modal -->
+        <div id="qr-modal" class="fixed inset-0 z-50 hidden">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeQRModal()"></div>
+
+            <!-- Modal Content -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-8 max-w-md w-full mx-4" style="box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <!-- Close Button -->
+                <button onclick="closeQRModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-gray-100">
+                    <i data-lucide="x" class="w-5 h-5" style="color: #666;"></i>
+                </button>
+
+                <!-- Modal Header -->
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--accent)">Scan to Donate</h3>
+                    <p class="text-sm" style="color: #666;">Scan this QR code with your mobile device to complete your donation via PayPal</p>
+                </div>
+
+                <!-- QR Code Container -->
+                <div class="flex justify-center mb-6">
+                    <div id="qrcode" class="p-4 bg-white rounded-xl" style="border: 2px solid #f0f0f0;"></div>
+                </div>
+
+                <!-- Donation Amount Display -->
+                <div class="text-center mb-4 p-3 rounded-lg" style="background: #fef7f1;">
+                    <p class="text-sm font-medium" style="color: var(--accent)">
+                        Donation Amount: <span id="qr-amount" class="text-lg font-bold">£50</span>
+                    </p>
+                </div>
+
+                <!-- PayPal Badge -->
+                <div class="flex items-center justify-center gap-2 text-xs" style="color: #666;">
+                    <span>Secure payment via</span>
+                    <svg width="60" height="16" viewBox="0 0 100 27" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.266 1.574h6.933c4.407 0 6.673 2.293 6.673 5.744 0 4.338-3.458 6.896-7.514 6.896h-2.815l-.994 6.28H4.734l2.532-18.92zm4.19 8.874h1.876c1.875 0 3.019-.936 3.019-2.503 0-1.242-.818-1.945-2.374-1.945h-1.736l-.785 4.448z" fill="#003087"/>
+                        <path d="M22.093 12.116c0-3.662 2.95-6.718 6.926-6.718 3.087 0 4.896 1.881 4.896 4.618 0 .598-.07 1.242-.174 1.637h-7.25c-.035 1.707 1.29 2.503 2.902 2.503 1.124 0 2.073-.351 2.855-.806l.784 3.032c-1.018.666-2.492 1.102-4.143 1.102-3.79 0-6.796-2.108-6.796-5.368z" fill="#009cde"/>
+                    </svg>
+                </div>
+
+                <!-- Alternative Payment Text -->
+                <div class="mt-4 text-center">
+                    <p class="text-xs" style="color: #999;">
+                        Or donate directly at
+                        <a href="#" class="underline" style="color: var(--primary);">paypal.me/WCFCharity</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Make Your Donation -->
+    <section class="process-section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: white">
+                    How to Make Your Donation
+                </h2>
+            </div>
+            
+            <!-- Process Steps -->
+            <div class="flex justify-center items-center mb-12">
+                <div class="flex items-center">
+                    <div class="step-circle" style="background: var(--secondary); color: white">
+                        1
+                    </div>
+                    <div class="w-20 h-1 mx-4" style="background: rgba(255, 255, 255, 0.3)"></div>
+                    <div class="step-circle" style="background: var(--background); color: var(--accent)">
+                        2
+                    </div>
+                    <div class="w-20 h-1 mx-4" style="background: rgba(255, 255, 255, 0.3)"></div>
+                    <div class="step-circle" style="background: var(--primary); color: white">
+                        3
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-12">
+                <div class="flex justify-center gap-8 text-white">
+                    <span>Choose Impact</span>
+                    <span>Complete</span>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+            
+            <!-- Step Details -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-4" style="color: var(--accent)">
+                        1. Choose Your Impact
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1" checked>
+                            <span class="text-sm">Choose one-time or monthly giving for sustained support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1" checked>
+                            <span class="text-sm">Select donation amount - every contribution makes a difference</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-4" style="color: var(--accent)">
+                        2. Donation Options
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1">
+                            <span class="text-sm">Secure online payment via PayPal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1">
+                            <span class="text-sm">Bank transfer or Cheque</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-4" style="color: var(--accent)">
+                        3. Confirmation
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1">
+                            <span class="text-sm">Gift Aid declaration for UK taxpayers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1">
+                            <span class="text-sm">Email Confirmation from WCF</span>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="mr-3 mt-1">
+                            <span class="text-sm">Receive copy of Annual Review</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4" style="color: var(--accent)">
+                    FREQUENTLY ASKED QUESTIONS
+                </h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item p-4 rounded-lg border" style="border-color: var(--border)">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(1)">
+                        <h3 class="font-semibold">CAN I MEET THE STUDENTS I SUPPORT?</h3>
+                        <span class="text-2xl" id="faq-icon-1">[+]</span>
+                    </div>
+                    <div class="faq-content mt-4" id="faq-content-1">
+                        <p class="text-sm" style="color: var(--muted-foreground)">
+                            Yes, we organize annual events where donors can meet grant recipients and hear about their educational journey and achievements.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item p-4 rounded-lg border" style="border-color: var(--border)">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(2)">
+                        <h3 class="font-semibold">IS MY DONATION TAX-DEDUCTIBLE?</h3>
+                        <span class="text-2xl" id="faq-icon-2">[+]</span>
+                    </div>
+                    <div class="faq-content mt-4" id="faq-content-2">
+                        <p class="text-sm" style="color: var(--muted-foreground)">
+                            Yes, as a registered charity in the UK, your donations are eligible for Gift Aid which allows us to claim an extra 25p for every £1 you donate.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item p-4 rounded-lg border" style="border-color: var(--border)">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(3)">
+                        <h3 class="font-semibold">WHAT'S THE MINIMUM DONATION AMOUNT?</h3>
+                        <span class="text-2xl" id="faq-icon-3">[+]</span>
+                    </div>
+                    <div class="faq-content mt-4" id="faq-content-3">
+                        <p class="text-sm" style="color: var(--muted-foreground)">
+                            There is no minimum donation amount. Every contribution, no matter how small, helps us support women's education.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item p-4 rounded-lg border" style="border-color: var(--border)">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(4)">
+                        <h3 class="font-semibold">CAN I SPECIFY HOW MY DONATION IS USED?</h3>
+                        <span class="text-2xl" id="faq-icon-4">[+]</span>
+                    </div>
+                    <div class="faq-content mt-4" id="faq-content-4">
+                        <p class="text-sm" style="color: var(--muted-foreground)">
+                            Yes, you can specify if you'd like your donation to support specific fields of study or particular programs within our foundation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item p-4 rounded-lg border" style="border-color: var(--border)">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(5)">
+                        <h3 class="font-semibold">HOW DO YOU SELECT SCHOLARSHIP RECIPIENTS?</h3>
+                        <span class="text-2xl" id="faq-icon-5">[+]</span>
+                    </div>
+                    <div class="faq-content mt-4" id="faq-content-5">
+                        <p class="text-sm" style="color: var(--muted-foreground)">
+                            Recipients are selected through a rigorous application process based on financial need, academic merit, and commitment to their chosen field of study.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">
+                Ready to Make a Difference?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join thousands of donors who have helped transform women's lives through education
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn px-8 py-3 rounded-full bg-white" style="color: var(--primary)">
+                    Donate Now
+                </button>
+                <button class="btn px-8 py-3 rounded-full border-2 border-white">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--accent); color: var(--background)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- For Applicants -->
+                <div>
+                    <h3 class="font-bold mb-4 text-white">FOR APPLICANTS</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="form.html" class="opacity-90 hover:opacity-100 hover:text-white transition">Apply Now</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Eligibility</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Application Guide</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <!-- For Supporters -->
+                <div>
+                    <h3 class="font-bold mb-4 text-white">FOR SUPPORTERS</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Donate</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Corporate Sponsorship</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Volunteer</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Fundraise</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Legacy Giving</a></li>
+                    </ul>
+                </div>
+                
+                <!-- About WCF -->
+                <div>
+                    <h3 class="font-bold mb-4 text-white">ABOUT WCF</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Our Story</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Leadership</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Annual Report</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">News & Updates</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div>
+                    <h3 class="font-bold mb-4 text-white">CONNECT</h3>
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="opacity-90 hover:opacity-100 hover:text-white transition">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm opacity-90">
+                        Registered Charity No: 123456<br>
+                        Tel: 020 1234 5678<br>
+                        Email: info@wcf.org.uk
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t text-center text-sm opacity-90" style="border-color: rgba(254, 247, 241, 0.2)">
+                <p>© 2024 Women's Careers Foundation</p>
+                <p class="mt-2">
+                    <a href="#" class="hover:text-white">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white">Accessibility</a> | 
+                    <a href="#" class="hover:text-white">Terms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // PayPal Configuration
+        const PAYPAL_BUSINESS_EMAIL = 'donations@womenscareersfoundation.org'; // Replace with actual PayPal email
+        const PAYPAL_CURRENCY = 'GBP';
+
+        // Get current donation amount
+        function getCurrentAmount() {
+            const amountInput = document.querySelector('input[type="number"]');
+            return amountInput ? amountInput.value : 50;
+        }
+
+        // Get current currency
+        function getCurrentCurrency() {
+            const currencySelect = document.querySelector('select');
+            return currencySelect ? currencySelect.value : 'GBP';
+        }
+
+        // Generate PayPal donation URL
+        function generatePayPalURL(amount, currency) {
+            const baseURL = 'https://www.paypal.com/cgi-bin/webscr';
+            const params = new URLSearchParams({
+                'cmd': '_donations',
+                'business': PAYPAL_BUSINESS_EMAIL,
+                'item_name': 'Donation to Women\'s Careers Foundation',
+                'amount': amount,
+                'currency_code': currency,
+                'no_note': '0',
+                'no_shipping': '1',
+                'return': window.location.origin + '/thank-you',
+                'cancel_return': window.location.origin + '/donor_page.html'
+            });
+
+            return `${baseURL}?${params.toString()}`;
+        }
+
+        // Process PayPal donation
+        function processPayPalDonation() {
+            const amount = getCurrentAmount();
+            const currency = getCurrentCurrency();
+            const donorName = document.querySelector('input[placeholder="Your Name (optional)"]').value;
+            const isAnonymous = document.querySelector('input[type="checkbox"]').checked;
+
+            // Generate PayPal URL
+            const paypalURL = generatePayPalURL(amount, currency);
+
+            // Redirect to PayPal
+            window.open(paypalURL, '_blank');
+        }
+
+        // Show QR Code Modal
+        function showQRCode() {
+            const amount = getCurrentAmount();
+            const currency = getCurrentCurrency();
+
+            // Update amount display in modal
+            document.getElementById('qr-amount').textContent = `${getCurrencySymbol(currency)}${amount}`;
+
+            // Generate PayPal URL
+            const paypalURL = generatePayPalURL(amount, currency);
+
+            // Clear previous QR code
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+
+            // Generate new QR code using qrcode.js
+            try {
+                const qrCode = new QRCode(qrContainer, {
+                    text: paypalURL,
+                    width: 200,
+                    height: 200,
+                    colorDark: '#02393b',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } catch (error) {
+                console.error('QR Code generation error:', error);
+                qrContainer.innerHTML = '<p class="text-sm text-red-600">Error generating QR code</p>';
+            }
+
+            // Show modal
+            const modal = document.getElementById('qr-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            // Re-initialize Lucide icons for the modal close button
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+
+        // Close QR Modal
+        function closeQRModal() {
+            const modal = document.getElementById('qr-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Get currency symbol
+        function getCurrencySymbol(currency) {
+            const symbols = {
+                'GBP': '£',
+                'USD': '$',
+                'EUR': '€'
+            };
+            return symbols[currency] || currency;
+        }
+
+        // Update impact message when amount changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const amountInput = document.querySelector('input[type="number"]');
+            if (amountInput) {
+                amountInput.addEventListener('input', function() {
+                    updateImpactMessage(this.value);
+                });
+            }
+        });
+
+        // Update impact message based on amount
+        function updateImpactMessage(amount) {
+            const impactElement = document.querySelector('.mt-4.text-center.p-2\\.5.rounded-lg p');
+            if (!impactElement) return;
+
+            let message = '';
+            amount = parseInt(amount);
+
+            if (amount >= 100) {
+                message = `💡 <strong>£${amount}</strong> could fund a complete training course for a student`;
+            } else if (amount >= 50) {
+                message = `💡 <strong>£${amount}</strong> could provide essential textbooks for a student's entire semester`;
+            } else if (amount >= 25) {
+                message = `💡 <strong>£${amount}</strong> could cover exam fees for a qualifying student`;
+            } else if (amount >= 10) {
+                message = `💡 <strong>£${amount}</strong> could provide study materials for a month`;
+            } else {
+                message = `💡 Every pound makes a difference in supporting women's education`;
+            }
+
+            impactElement.innerHTML = message;
+        }
+        
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.textContent = '[+]';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-content').forEach(el => {
+                    el.classList.remove('open');
+                });
+                document.querySelectorAll('[id^="faq-icon-"]').forEach(el => {
+                    el.textContent = '[+]';
+                });
+                
+                // Open this FAQ
+                content.classList.add('open');
+                icon.textContent = '[-]';
+            }
+        }
+        
+        // Enhanced Donation Form Interactions
+
+        // Donation Type Toggle
+        const oneTimeBtn = document.getElementById('one-time-btn');
+        const monthlyBtn = document.getElementById('monthly-btn');
+
+        if (oneTimeBtn && monthlyBtn) {
+            oneTimeBtn.addEventListener('click', function() {
+                oneTimeBtn.style.background = 'white';
+                oneTimeBtn.style.color = 'var(--accent)';
+                oneTimeBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                monthlyBtn.style.background = 'transparent';
+                monthlyBtn.style.color = '#666';
+                monthlyBtn.style.boxShadow = 'none';
+            });
+
+            monthlyBtn.addEventListener('click', function() {
+                monthlyBtn.style.background = 'white';
+                monthlyBtn.style.color = 'var(--accent)';
+                monthlyBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                oneTimeBtn.style.background = 'transparent';
+                oneTimeBtn.style.color = '#666';
+                oneTimeBtn.style.boxShadow = 'none';
+            });
+        }
+
+        // Quick Amount Selection
+        document.querySelectorAll('.amount-option').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove selected state from all buttons
+                document.querySelectorAll('.amount-option').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.style.borderColor = '#e0e0e0';
+                    btn.style.background = 'transparent';
+
+                    // Reset text color for non-selected buttons
+                    const span = btn.querySelector('span:first-child');
+                    if (span) {
+                        span.style.color = 'var(--accent)';
+                        span.classList.remove('text-white');
+                    }
+                });
+
+                // Add selected state to clicked button
+                this.classList.add('selected');
+                this.style.borderColor = 'var(--primary)';
+                this.style.background = 'linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)';
+
+                // Update text color for selected button
+                const selectedSpan = this.querySelector('span:first-child');
+                if (selectedSpan) {
+                    selectedSpan.style.color = 'white';
+                    selectedSpan.classList.add('text-white');
+                }
+
+                // Update the input field with the selected amount
+                const amountText = this.textContent.trim();
+                const amountValue = parseInt(amountText.replace('£', ''));
+                const amountInput = document.querySelector('input[type="number"]');
+                if (amountInput && !isNaN(amountValue)) {
+                    amountInput.value = amountValue;
+                }
+            });
+        });
+
+        // Old amount card compatibility
+        document.querySelectorAll('.amount-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.amount-card').forEach(c => {
+                    c.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

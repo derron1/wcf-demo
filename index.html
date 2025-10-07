@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Careers Foundation - Supporting Women's Education Since 1900</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/cxg4xgz.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme_vibrant_blocks_1.css">
+    
+    <style>
+        /* Import theme colors */
+        @import url('theme_vibrant_blocks_1.css');
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes floatCircle1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -40px); }
+        }
+
+        @keyframes floatCircle2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-40px, 30px); }
+        }
+
+        @keyframes floatCircle3 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes widthGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 80px;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-fadeIn { animation: fadeIn 0.4s ease-out; }
+        .animate-widthGrow { animation: widthGrow 0.6s ease-out 0.2s both; }
+        .animate-slideInLeft { animation: slideInLeft 0.5s ease-out 0.4s both; }
+        .animate-fadeInUp { animation: fadeInUp 0.4s ease-out 0.6s both; }
+        .animate-scaleIn { animation: scaleIn 0.3s ease-out 0.8s both; }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.6s ease-out;
+        }
+
+        .animate-count {
+            animation: countUp 1.2s ease-out;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .divider-animate {
+            animation: widthGrow 0.8s ease-out;
+        }
+
+        /* Stagger Animations */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .animate-stagger-1 { animation: fadeInUp 0.3s ease-out 1s both; }
+        .animate-stagger-2 { animation: fadeInUp 0.3s ease-out 1.2s both; }
+        .animate-stagger-3 { animation: fadeInUp 0.3s ease-out 1.4s both; }
+
+        /* Sparkle decorations */
+        .sparkle {
+            position: absolute;
+            color: var(--primary);  /* Orange sparkles */
+            opacity: 0.7;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        @keyframes gradientSlide {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Custom Styles */
+        body {
+            font-family: var(--font-sans);
+            background: var(--background);  /* Cream #fef7f1 */
+            color: var(--foreground);  /* Teal #02393b */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            color: var(--foreground) !important;
+        }
+        
+        .hero-title {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            color: var(--accent) !important;  /* Use teal for better contrast on cream */
+        }
+        
+        /* Ensure proper color application with accessibility */
+        .text-primary {
+            color: var(--primary) !important;  /* Orange #f14000 */
+        }
+        
+        .text-secondary {
+            color: var(--secondary) !important;  /* Pink #f97ec7 */
+        }
+        
+        .text-accent {
+            color: var(--accent) !important;  /* Teal #02393b */
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;  /* Orange #f14000 */
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary) !important;  /* Pink #f97ec7 */
+        }
+        
+        .bg-accent {
+            background-color: var(--accent) !important;  /* Teal #02393b */
+        }
+        
+        /* High contrast adjustments */
+        .bg-primary, .bg-accent {
+            color: white !important;  /* White text on orange/teal for better contrast */
+        }
+        
+        .bg-secondary {
+            color: var(--accent) !important;  /* Teal text on pink for contrast */
+        }
+        
+        .btn {
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        
+        /* Primary button (orange) */
+        .btn.bg-primary {
+            background: var(--primary) !important;
+            color: white !important;
+            border: 2px solid var(--primary) !important;
+        }
+        
+        /* Outline button */
+        .btn.border-2 {
+            background: transparent !important;
+            color: var(--accent) !important;  /* Teal text for better contrast */
+            border-color: var(--accent) !important;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn.border-2:hover {
+            background: var(--accent) !important;
+            color: white !important;
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .card {
+            transition: all 0.3s ease-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;  /* White on orange background */
+        }
+        
+        .stats-section {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .stats-section p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);  /* Teal border for visibility */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: white;  /* Keep white for icon circles for better contrast */
+        }
+        
+        .icon-circle:hover {
+            border-color: var(--primary);  /* Orange on hover */
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+        
+        .icon-circle:hover i {
+            color: white !important;
+        }
+        
+        .footer-link {
+            transition: color 0.2s ease;
+            color: var(--background) !important;  /* Cream text on teal */
+            opacity: 0.9;
+        }
+        
+        .footer-link:hover {
+            color: white !important;  /* Bright white on hover */
+            opacity: 1;
+        }
+        
+        /* Scroll Reveal */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Header Sticky Shadow */
+        header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer styles for teal background */
+        .footer-section {
+            background: var(--accent) !important;
+            color: var(--background) !important;
+        }
+        
+        .footer-section h3 {
+            font-family: "filson-pro", sans-serif !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            color: white !important;
+        }
+        
+        .footer-section p,
+        .footer-section li,
+        .footer-section a {
+            color: var(--background) !important;
+            opacity: 0.95;
+        }
+        
+        .footer-section a:hover {
+            color: white !important;
+            opacity: 1;
+        }
+        
+        /* Footer border styling */
+        .footer-section .border-t {
+            border-color: rgba(254, 247, 241, 0.2) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="bg-white sticky top-0 z-50 transition-shadow duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center mr-3">
+                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Group 1">
+                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm uppercase tracking-wider">Women's Careers Foundation</h3>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="transition hover:text-primary" style="color: var(--foreground)">Home</a>
+                    <a href="about_us.html" class="transition hover:text-primary" style="color: var(--foreground)">About Us</a>
+                    <a href="meet_the_team.html" class="transition hover:text-primary" style="color: var(--foreground)">Meet the Team</a>
+                    <a href="get_involved.html" class="transition hover:text-primary" style="color: var(--foreground)">Get Involved</a>
+                    <a href="contact_us.html" class="transition hover:text-primary" style="color: var(--foreground)">Contact</a>
+                    <a href="donor_page.html" class="px-6 py-2 rounded-full text-white btn" style="background: var(--primary)">Apply</a>
+                </nav>
+
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section class="relative min-h-screen flex items-center py-20 overflow-hidden" style="background: var(--background)">
+        <!-- Background gradient mesh -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, transparent, rgba(249, 126, 199, 0.1), rgba(241, 64, 0, 0.05))"></div>
+        </div>
+
+        <!-- Sparkle decorations -->
+        <div class="sparkle" style="top: 10%; left: 15%; font-size: 1.5rem;">✦</div>
+        <div class="sparkle" style="top: 30%; right: 20%; font-size: 1.2rem; animation-delay: 1s;">✦</div>
+        <div class="sparkle" style="bottom: 20%; left: 10%; font-size: 1.8rem; animation-delay: 0.5s;">✦</div>
+        <div class="sparkle" style="bottom: 40%; right: 15%; font-size: 1.4rem; animation-delay: 1.5s;">✦</div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content (60%) -->
+                <div class="lg:col-span-7">
+                    <!-- Eyebrow text -->
+                    <p class="text-sm uppercase tracking-[0.2em] mb-4 animate-fadeIn" style="color: var(--muted-foreground)">
+                        Supporting Women's Education Since 1900
+                    </p>
+
+                    <!-- Animated divider -->
+                    <div class="h-1 mb-8 animate-widthGrow" style="background: var(--primary); width: 80px;"></div>
+
+                    <!-- Hero headline -->
+                    <h1 class="hero-title text-4xl lg:text-5xl font-bold mb-6 animate-slideInLeft" style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05;">
+                        What Is Worth Having Is<br>
+                        <span class="worth-sharing-text" style="background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 50%, var(--accent) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientSlide 3s ease infinite;">Worth Sharing</span>
+                    </h1>
+
+                    <!-- Supporting text -->
+                    <p class="text-lg mb-8 max-w-xl animate-fadeInUp" style="color: var(--muted-foreground); line-height: 1.7;">
+                        Empowering women through education and financial support to help them achieve their dreams and build successful careers.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center gap-6 mb-12 animate-scaleIn">
+                        <a href="form.html" class="btn px-8 py-3 rounded-full text-white bg-primary inline-block">
+                            Apply for Grants
+                        </a>
+                        <a href="#" class="btn-link" style="color: var(--accent); display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full border-2" style="border-color: var(--accent)">
+                                <i data-lucide="play" class="w-4 h-4"></i>
+                            </span>
+                            How it works
+                        </a>
+                    </div>
+
+                    <!-- Inline stats -->
+                    <div class="flex flex-wrap gap-8">
+                        <div class="stat-inline animate-stagger-1" style="display: inline-flex; align-items: baseline; gap: 0.25rem;">
+                            <span class="stat-number" style="font-size: 1.5rem; font-weight: 800; color: var(--foreground);">500<span style="color: var(--primary);">+</span></span>
+                            <span class="stat-label" style="font-size: 0.875rem; color: var(--muted-foreground); font-weight: 500;">Grant Recipients</span>
+                        </div>
+                        <div class="stat-inline animate-stagger-2" style="display: inline-flex; align-items: baseline; gap: 0.25rem;">
+                            <span class="stat-number" style="font-size: 1.5rem; font-weight: 800; color: var(--foreground);">£200,000<span style="color: var(--primary);">+</span></span>
+                            <span class="stat-label" style="font-size: 0.875rem; color: var(--muted-foreground); font-weight: 500;">Funds in Grants</span>
+                        </div>
+                        <div class="stat-inline animate-stagger-3" style="display: inline-flex; align-items: baseline; gap: 0.25rem;">
+                            <span class="stat-number" style="font-size: 1.5rem; font-weight: 800; color: var(--foreground);">124</span>
+                            <span class="stat-label" style="font-size: 0.875rem; color: var(--muted-foreground); font-weight: 500;">Number of Grants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual (40%) -->
+                <div class="lg:col-span-5 relative h-[600px] hidden lg:block">
+                    <!-- Large triangle background shape behind image -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <!-- Main large triangle - Pink solid -->
+                        <div class="absolute" style="width: 550px; height: 550px; background: var(--secondary); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); top: 20%; left: 50%; transform: translateX(-50%);"></div>
+
+                        <!-- Secondary triangle - Cream solid -->
+                        <div class="absolute" style="width: 300px; height: 300px; background: #fef7f1; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); bottom: 10%; right: -5%; transform: rotate(60deg);"></div>
+
+                        <!-- Small accent triangle - Orange solid -->
+                        <div class="absolute" style="width: 100px; height: 100px; background: var(--primary); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); top: 20%; left: 5%; transform: rotate(-30deg);"></div>
+                    </div>
+
+                    <!-- Person image with clean edge -->
+                    <div class="absolute z-10" style="bottom: 0; left: 50%; transform: translateX(-50%); width: 380px; height: 500px;">
+                        <img src="img/RiannaPatterson.webp"
+                             alt="Rianna Patterson - Grant Recipient"
+                             class="w-full h-full object-cover object-top"
+                             style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));">
+                    </div>
+
+                    <!-- Floating geometric accents - smaller triangles -->
+                    <div class="absolute" style="width: 40px; height: 40px; background: var(--primary); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); top: 15%; right: 15%; animation: floatCircle1 15s ease-in-out infinite;"></div>
+                    <div class="absolute" style="width: 30px; height: 30px; background: var(--secondary); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); bottom: 25%; left: 10%; animation: floatCircle2 18s ease-in-out infinite; transform: rotate(180deg);"></div>
+                    <div class="absolute" style="width: 35px; height: 35px; background: var(--primary); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); top: 60%; right: 20%; animation: floatCircle3 12s ease-in-out infinite; transform: rotate(90deg);"></div>
+
+                    <!-- Success Story Quote Chevrons - matching brand style -->
+                    <div class="absolute bottom-20 right-10 animate-scaleIn" style="animation-delay: 1.2s; z-index: 20;">
+                        <div class="flex">
+                            <svg width="40" height="40" style="fill: var(--secondary); margin-right: -10px;">
+                                <path d="M10 20 L25 5 L30 10 L20 20 L30 30 L25 35 Z"/>
+                            </svg>
+                            <svg width="40" height="40" style="fill: var(--secondary);">
+                                <path d="M10 20 L25 5 L30 10 L20 20 L30 30 L25 35 Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alternative donate button floating -->
+        <a href="donor_page.html" class="fixed bottom-8 right-8 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group" style="border: 2px solid var(--accent); z-index: 50;">
+            <i data-lucide="heart" class="w-5 h-5" style="color: var(--accent)"></i>
+            <span style="color: var(--accent); font-weight: 600;">Donate</span>
+        </a>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-24 scroll-reveal" style="background: var(--accent)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Two column layout like IntroSnap -->
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left side - Title and visual (40%) -->
+                <div class="lg:col-span-5">
+                    <!-- Main heading -->
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="color: white !important; line-height: 1.2;">
+                        Ways to<br>
+                        Engage WCF<span style="color: var(--secondary)">.</span>
+                    </h2>
+
+                    <!-- Subheading -->
+                    <p class="text-lg mb-8" style="color: var(--background); line-height: 1.6;">
+                        The WCF Provides One-Off Grants To Women And Girls In Need Of Financial Assistance To Complete Their Studies.
+                    </p>
+
+                    <!-- Visual element with image -->
+                    <div class="relative">
+                        <!-- Background blob shape -->
+                        <div class="absolute inset-0" style="background: var(--secondary); opacity: 0.3; border-radius: 50%; filter: blur(60px); transform: scale(1.2);"></div>
+
+                        <!-- Image -->
+                        <div class="relative z-10 rounded-2xl overflow-hidden" style="height: 400px;">
+                            <img src="img/jess_hopkins_4.jpg"
+                                 alt="WCF Community Member"
+                                 class="w-full h-full object-cover object-top"
+                                 style="filter: brightness(0.95); object-position: 50% 20%;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side - Feature cards (60%) -->
+                <div class="lg:col-span-7">
+                    <!-- Cards grid -->
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <!-- Social Events Card -->
+                        <div class="bg-white rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(2, 57, 59, 0.1);">
+                            <!-- Decorative accent - left angle -->
+                            <div class="absolute top-0 right-0" style="width: 40px; height: 40px; background: var(--secondary); opacity: 0.8; clip-path: polygon(0% 0%, 100% 0%, 100% 100%);"></div>
+
+                            <!-- Icon -->
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center p-2" style="background: var(--secondary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <svg width="32" height="32" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Group 1">
+                                        <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="white"/>
+                                        <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="white"/>
+                                        <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="white"/>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="font-bold text-lg mb-2" style="color: var(--accent)">Social Events</h3>
+                            <p class="text-sm" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Networking opportunities for grant recipients and supporters
+                            </p>
+                        </div>
+
+                        <!-- Annual AGM Card -->
+                        <div class="bg-white rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(2, 57, 59, 0.1);">
+                            <!-- Decorative accent - left angle -->
+                            <div class="absolute top-0 right-0" style="width: 40px; height: 40px; background: var(--primary); opacity: 0.8; clip-path: polygon(0% 0%, 100% 0%, 100% 100%);"></div>
+
+                            <!-- Icon -->
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center p-2" style="background: var(--primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <svg width="32" height="32" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Group 1">
+                                        <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="white"/>
+                                        <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="white"/>
+                                        <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="white"/>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="font-bold text-lg mb-2" style="color: var(--accent)">Annual AGM</h3>
+                            <p class="text-sm" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Members and grant recipients discuss the charity's future
+                            </p>
+                        </div>
+
+                        <!-- Annual Review Card -->
+                        <div class="bg-white rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(2, 57, 59, 0.1);">
+                            <!-- Decorative accent - left angle -->
+                            <div class="absolute top-0 right-0" style="width: 40px; height: 40px; background: var(--accent); opacity: 0.8; clip-path: polygon(0% 0%, 100% 0%, 100% 100%);"></div>
+
+                            <!-- Icon -->
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center p-2" style="background: var(--accent); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <svg width="32" height="32" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Group 1">
+                                        <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="white"/>
+                                        <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="white"/>
+                                        <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="white"/>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="font-bold text-lg mb-2" style="color: var(--accent)">Annual Review</h3>
+                            <p class="text-sm" style="color: var(--muted-foreground); line-height: 1.6;">
+                                News and achievements from past grant recipients
+                            </p>
+                        </div>
+
+                        <!-- Volunteer Card -->
+                        <div class="bg-white rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(2, 57, 59, 0.1);">
+                            <!-- Decorative accent - left angle -->
+                            <div class="absolute top-0 right-0" style="width: 40px; height: 40px; background: var(--primary); opacity: 0.8; clip-path: polygon(0% 0%, 100% 0%, 100% 100%);"></div>
+
+                            <!-- Icon -->
+                            <div class="w-14 h-14 mb-4 flex items-center justify-center" style="background: var(--primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="font-bold text-lg mb-2" style="color: var(--accent)">Volunteer With Us</h3>
+                            <p class="text-sm" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Join our mission to support women's education and careers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating decorative elements -->
+            <div class="absolute bottom-40 left-1/2 w-16 h-16" style="background: var(--primary); opacity: 0.3; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+        </div>
+    </section>
+
+    <!-- How to Apply -->
+    <section class="py-24 scroll-reveal" style="background: linear-gradient(135deg, #fef7f1 0%, white 50%, #fef7f1 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.2em] mb-4" style="color: var(--primary)">Application Process</p>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--accent)">How To Apply</h2>
+                <div class="w-24 h-1 mx-auto" style="background: var(--primary);"></div>
+            </div>
+
+            <!-- Steps with connecting lines -->
+            <div class="relative mb-20">
+                <!-- Connecting line (hidden on mobile) -->
+                <div class="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5" style="background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--accent) 100%);"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <!-- Step card -->
+                        <div class="bg-white rounded-xl p-8 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            <!-- Angular accent -->
+                            <div class="absolute top-0 left-0" style="width: 60px; height: 60px; background: var(--secondary); opacity: 0.1; clip-path: polygon(0 0, 100% 0, 0 100%);"></div>
+
+                            <!-- Step number -->
+                            <div class="w-16 h-16 mb-6 flex items-center justify-center relative" style="background: var(--secondary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <span class="text-2xl font-bold text-white">1</span>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="text-xl font-bold mb-3" style="color: var(--accent)">Start Online</h3>
+                            <p class="text-base" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Click "Apply For Grant" to access our online form
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <!-- Step card -->
+                        <div class="bg-white rounded-xl p-8 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            <!-- Angular accent -->
+                            <div class="absolute top-0 left-0" style="width: 60px; height: 60px; background: var(--primary); opacity: 0.1; clip-path: polygon(0 0, 100% 0, 0 100%);"></div>
+
+                            <!-- Step number -->
+                            <div class="w-16 h-16 mb-6 flex items-center justify-center relative" style="background: var(--primary); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <span class="text-2xl font-bold text-white">2</span>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="text-xl font-bold mb-3" style="color: var(--accent)">Complete Form</h3>
+                            <p class="text-base" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Fill out the online application form and upload documents
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <!-- Step card -->
+                        <div class="bg-white rounded-xl p-8 relative overflow-hidden transition-all duration-300 hover:transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            <!-- Angular accent -->
+                            <div class="absolute top-0 left-0" style="width: 60px; height: 60px; background: var(--accent); opacity: 0.1; clip-path: polygon(0 0, 100% 0, 0 100%);"></div>
+
+                            <!-- Step number -->
+                            <div class="w-16 h-16 mb-6 flex items-center justify-center relative" style="background: var(--accent); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);">
+                                <span class="text-2xl font-bold text-white">3</span>
+                            </div>
+
+                            <!-- Content -->
+                            <h3 class="text-xl font-bold mb-3" style="color: var(--accent)">Submit Online</h3>
+                            <p class="text-base" style="color: var(--muted-foreground); line-height: 1.6;">
+                                Submit electronically before deadline date.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supported Subjects -->
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl p-10 relative overflow-hidden" style="border: 2px solid var(--secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-10 -right-10" style="width: 100px; height: 100px; background: var(--secondary); opacity: 0.05; transform: rotate(45deg);"></div>
+                    <div class="absolute -bottom-10 -left-10" style="width: 80px; height: 80px; background: var(--primary); opacity: 0.05; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
+
+                    <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--accent)">PREVIOUSLY SUPPORTED SUBJECTS INCLUDE:</h3>
+
+                    <!-- Subject tags -->
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--secondary); color: white;">Law</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--primary); color: white;">Medicine</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--accent); color: white;">Research</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--secondary); color: white;">Dance</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--primary); color: white;">Drama Therapy</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--accent); color: white;">Dentistry</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--secondary); color: white;">Finance</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--primary); color: white;">Teaching</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--accent); color: white;">Architecture</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--secondary); color: white;">Theology</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--primary); color: white;">Social Work</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--accent); color: white;">Music</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--secondary); color: white;">Anthropology</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium" style="background: var(--primary); color: white;">Art History</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-12">
+                <a href="form.html" class="inline-flex items-center gap-3 px-10 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:transform hover:scale-105" style="background: var(--primary); box-shadow: 0 10px 30px rgba(241, 64, 0, 0.3);">
+                    <span>APPLY FOR GRANTS</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Impact Section -->
+    <section class="py-24 scroll-reveal" style="background: linear-gradient(135deg, white 0%, #fef7f1 100%); position: relative; overflow: hidden;">
+        <!-- Background decorative elements with float animation -->
+        <div class="absolute top-20 left-10" style="width: 200px; height: 200px; background: var(--secondary); opacity: 0.05; border-radius: 50%; filter: blur(40px); animation: floatBubble 20s ease-in-out infinite;"></div>
+        <div class="absolute bottom-20 right-10" style="width: 300px; height: 300px; background: var(--primary); opacity: 0.03; border-radius: 50%; filter: blur(60px); animation: floatBubble 25s ease-in-out infinite reverse;"></div>
+
+        <!-- Add animation styles -->
+        <style>
+            @keyframes floatBubble {
+                0%, 100% { transform: translate(0, 0) scale(1); }
+                33% { transform: translate(30px, -30px) scale(1.1); }
+                66% { transform: translate(-20px, 20px) scale(0.9); }
+            }
+
+            @keyframes slideInFromLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-100px) scale(0.8);
+                }
+                to {
+                    opacity: 0.7;
+                    transform: translateX(0) scale(0.95);
+                }
+            }
+
+            @keyframes slideInFromRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(100px) scale(0.8);
+                }
+                to {
+                    opacity: 0.7;
+                    transform: translateX(0) scale(0.95);
+                }
+            }
+
+            @keyframes slideInCenter {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1.05);
+                }
+            }
+
+            @keyframes pulseGlow {
+                0%, 100% {
+                    box-shadow: 0 20px 60px rgba(2, 57, 59, 0.3);
+                }
+                50% {
+                    box-shadow: 0 25px 70px rgba(2, 57, 59, 0.4), 0 0 50px rgba(249, 126, 199, 0.2);
+                }
+            }
+
+            @keyframes quoteBounce {
+                0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+                50% { transform: translateY(-10px) rotate(-5deg); opacity: 0.3; }
+                100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            }
+
+            .testimonial-left {
+                animation: slideInFromLeft 0.8s ease-out forwards;
+                animation-delay: 0.2s;
+                opacity: 0;
+            }
+
+            .testimonial-center {
+                animation: slideInCenter 0.8s ease-out forwards;
+                animation-delay: 0.4s;
+                opacity: 0;
+            }
+
+            .testimonial-right {
+                animation: slideInFromRight 0.8s ease-out forwards;
+                animation-delay: 0.6s;
+                opacity: 0;
+            }
+
+            .testimonial-center-card {
+                animation: pulseGlow 3s ease-in-out infinite;
+            }
+
+            .quote-mark {
+                animation: quoteBounce 2s ease-in-out;
+                animation-delay: 1s;
+            }
+
+            .carousel-dot {
+                transition: all 0.3s ease;
+            }
+
+            .carousel-dot.active {
+                animation: dotPulse 1.5s ease-in-out infinite;
+            }
+
+            @keyframes dotPulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.8; }
+            }
+
+            .nav-arrow {
+                transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+
+            .nav-arrow:hover {
+                transform: translateY(-50%) scale(1.15);
+                box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+            }
+
+            .nav-arrow-left:hover {
+                transform: translateY(-50%) scale(1.15);
+                border-color: var(--secondary);
+            }
+
+            @keyframes arrowPulse {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(3px); }
+            }
+
+            .nav-arrow:hover svg {
+                animation: arrowPulse 0.8s ease-in-out infinite;
+            }
+
+            .nav-arrow-left:hover svg {
+                animation: arrowPulse 0.8s ease-in-out infinite reverse;
+            }
+
+            .profile-avatar {
+                animation: avatarFloat 3s ease-in-out infinite;
+            }
+
+            @keyframes avatarFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-5px); }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .section-header {
+                animation: fadeInUp 0.8s ease-out;
+            }
+        </style>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 section-header">
+                <p class="text-sm uppercase tracking-[0.2em] mb-4" style="color: var(--primary); animation-delay: 0.1s;"></p>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--accent); animation-delay: 0.2s;">Real Impact<span style="color: var(--secondary)">.</span></h2>
+                <div class="w-24 h-1 mx-auto" style="background: var(--primary); animation-delay: 0.3s;"></div>
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="relative">
+                <!-- Navigation arrows -->
+                <button onclick="changeTestimonial(-1)" class="nav-arrow nav-arrow-left absolute left-0 lg:-left-12 top-1/2 transform -translate-y-1/2 w-14 h-14 flex items-center justify-center z-10 transition-all duration-300 group" style="background: white; border: 2px solid var(--secondary); border-radius: 50%; box-shadow: 0 8px 24px rgba(0,0,0,0.08); cursor: pointer;">
+                    <div class="relative w-full h-full flex items-center justify-center">
+                        <!-- Hover effect background -->
+                        <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: var(--secondary);"></div>
+                        <!-- Arrow icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="relative z-10 transition-all duration-300 group-hover:translate-x-[-2px]" style="stroke: var(--accent); stroke-width: 2.5;">
+                            <path d="M15 18L9 12L15 6" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"/>
+                        </svg>
+                    </div>
+                </button>
+                <button onclick="changeTestimonial(1)" class="nav-arrow absolute right-0 lg:-right-12 top-1/2 transform -translate-y-1/2 w-14 h-14 flex items-center justify-center z-10 transition-all duration-300 group" style="background: var(--primary); border-radius: 50%; box-shadow: 0 8px 24px rgba(241, 64, 0, 0.25); cursor: pointer;">
+                    <div class="relative w-full h-full flex items-center justify-center">
+                        <!-- Hover effect background -->
+                        <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: var(--accent);"></div>
+                        <!-- Arrow icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="relative z-10 transition-all duration-300 group-hover:translate-x-[2px]" style="stroke: white; stroke-width: 2.5;">
+                            <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Testimonials Grid -->
+                <div id="testimonials-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 - Side -->
+                    <div id="testimonial-0" class="testimonial-card testimonial-left">
+                        <div class="bg-white rounded-2xl p-8 h-full relative transition-all duration-500 hover:transform hover:scale-100 hover:opacity-100 flex flex-col justify-between" style="box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                            <div>
+                                <!-- Quote mark -->
+                                <div class="absolute -top-4 left-8 quote-mark">
+                                    <span style="font-size: 60px; color: var(--secondary); opacity: 0.3; font-family: Georgia, serif;">"</span>
+                                </div>
+
+                                <!-- Quote -->
+                                <p class="text-base mb-4 mt-8" style="color: var(--muted-foreground); line-height: 1.8;">
+                                    "Without your support to help with my tuition fees, I would not have been able to undertake my life-long ambition to become a veterinary surgeon and I would like to say a massive thank you."
+                                </p>
+                            </div>
+
+                            <!-- Profile -->
+                            <div class="flex items-center mt-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden profile-avatar" style="background: var(--accent);">
+                                    <div class="w-full h-full flex items-center justify-center p-2">
+                                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Group 1">
+                                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold" style="color: var(--accent) !important">Veterinary Graduate</h4>
+                                    <p class="text-sm" style="color: var(--muted-foreground)">2022 Recipient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 - Center (Featured) -->
+                    <div id="testimonial-1" class="testimonial-card testimonial-center">
+                        <div class="rounded-2xl p-8 h-full relative testimonial-center-card flex flex-col justify-between" style="background: var(--accent);">
+                            <div>
+                                <!-- Quote mark -->
+                                <div class="absolute -top-4 left-8 quote-mark">
+                                    <span style="font-size: 60px; color: var(--secondary); font-family: Georgia, serif;">"</span>
+                                </div>
+
+                                <!-- Quote -->
+                                <p class="text-base mb-4 text-white mt-8" style="line-height: 1.8;">
+                                    "It is incredibly humbling to be recognised as a recipient of the WCF grant as it has proudly supported generations of girls and women like me to grow in independence through financing training towards careers, in my case in medicine"
+                                </p>
+                            </div>
+
+                            <!-- Profile -->
+                            <div class="flex items-center mt-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden profile-avatar" style="background: var(--accent);">
+                                    <div class="w-full h-full flex items-center justify-center p-2">
+                                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Group 1">
+                                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-white" style="color: white !important">Medical Student</h4>
+                                    <p class="text-sm" style="color: var(--background); opacity: 0.8;">2023 Recipient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 - Side -->
+                    <div id="testimonial-2" class="testimonial-card testimonial-right">
+                        <div class="bg-white rounded-2xl p-8 h-full relative transition-all duration-500 hover:transform hover:scale-100 hover:opacity-100 flex flex-col justify-between" style="box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                            <div>
+                                <!-- Quote mark -->
+                                <div class="absolute -top-4 left-8 quote-mark">
+                                    <span style="font-size: 60px; color: var(--secondary); opacity: 0.3; font-family: Georgia, serif;">"</span>
+                                </div>
+
+                                <!-- Quote -->
+                                <p class="text-base mb-4 mt-8" style="color: var(--muted-foreground); line-height: 1.8;">
+                                    "I have now completed my teacher training. My first day teaching as a teacher starts tomorrow. Thank you again for all you have done."
+                                </p>
+                            </div>
+
+                            <!-- Profile -->
+                            <div class="flex items-center mt-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden profile-avatar" style="background: var(--accent);">
+                                    <div class="w-full h-full flex items-center justify-center p-2">
+                                        <svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="Group 1">
+                                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold" style="color: var(--accent) !important">Newly Qualified Teacher</h4>
+                                    <p class="text-sm" style="color: var(--muted-foreground)">2023 Recipient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel dots -->
+                <div class="flex justify-center gap-2 mt-12">
+                    <div class="carousel-dot w-8 h-2 rounded-full" style="background: var(--muted-foreground); opacity: 0.3;"></div>
+                    <div class="carousel-dot active w-12 h-2 rounded-full" style="background: var(--primary);"></div>
+                    <div class="carousel-dot w-8 h-2 rounded-full" style="background: var(--muted-foreground); opacity: 0.3;"></div>
+                    <div class="carousel-dot w-8 h-2 rounded-full" style="background: var(--muted-foreground); opacity: 0.3;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patron Section -->
+    <section class="py-24 scroll-reveal" style="background: linear-gradient(135deg, var(--accent) 0%, #013436 100%); position: relative; overflow: hidden">
+        <!-- Decorative geometric elements -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: var(--secondary); opacity: 0.1; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); animation: floatCircle1 20s ease-in-out infinite;"></div>
+        <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: var(--primary); opacity: 0.05; transform: rotate(45deg);"></div>
+        <div style="position: absolute; top: 40%; left: 10%; width: 100px; height: 100px; background: white; opacity: 0.02; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="position: relative; z-index: 1">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.2em] mb-4" style="color: var(--secondary)">Leadership</p>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-white" style="color: white !important">Our Distinguished Patron<span style="color: var(--secondary)">.</span></h2>
+                <div class="w-24 h-1 mx-auto" style="background: var(--secondary);"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Photo - Left Side (5 columns) -->
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <!-- Background shape -->
+                        <div class="absolute -inset-4 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); filter: blur(20px);"></div>
+
+                        <!-- Main image container -->
+                        <div class="relative rounded-2xl overflow-hidden" style="box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                            <div class="aspect-[4/5] overflow-hidden">
+                                <img src="img/naomie.png" alt="Naomie Harris OBE" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700">
+                            </div>
+
+                            <!-- Gradient overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+                            <!-- Badge -->
+                            <div class="absolute top-6 right-6 px-5 py-2 rounded-full backdrop-blur-md animate-pulse" style="background: var(--secondary); box-shadow: 0 8px 24px rgba(249, 126, 199, 0.4);">
+                                <span class="text-white text-sm font-bold tracking-wider">WCF ALUMNA</span>
+                            </div>
+
+                            <!-- Name overlay at bottom -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                                <h3 class="text-3xl font-bold text-white mb-2" style="color: white !important">Naomie Harris</h3>
+                                <p class="text-lg font-medium" style="color: var(--secondary)">OBE • Actor • WCF Patron</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative accent -->
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24" style="background: var(--primary); opacity: 0.3; clip-path: polygon(0% 0%, 100% 0%, 100% 100%); z-index: -1;"></div>
+                    </div>
+                </div>
+
+                <!-- Content - Right Side (7 columns) -->
+                <div class="lg:col-span-7">
+                    <div class="space-y-8">
+                        <!-- Quote Section -->
+                        <div class="relative">
+                            <!-- Large quote mark -->
+                            <div class="absolute -top-8 -left-4">
+                                <span style="font-size: 120px; color: var(--secondary); opacity: 0.2; font-family: Georgia, serif; line-height: 0.8;">"</span>
+                            </div>
+
+                            <blockquote class="relative z-10 text-xl lg:text-2xl leading-relaxed text-white font-light pl-8">
+                                The Women's Careers Foundation made a real difference at the beginning of my career, helping me to complete my training and take a big step towards my dream.
+                            </blockquote>
+
+                            <blockquote class="relative z-10 text-xl lg:text-2xl leading-relaxed text-white font-light pl-8 mt-6">
+                                Now, as the charity's Patron, I'm honoured to support its ongoing work helping other women and girls to fulfil their potential and follow their dreams.
+                            </blockquote>
+                        </div>
+
+                        <!-- Impact Stats -->
+                        <!-- <div class="grid grid-cols-3 gap-6 py-8 border-t border-white/20">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2" style="color: var(--secondary)">1996</div>
+                                <div class="text-sm text-white/80">WCF Grant Recipient</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2" style="color: var(--secondary)">28+</div>
+                                <div class="text-sm text-white/80">Years of Impact</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2" style="color: var(--secondary)">∞</div>
+                                <div class="text-sm text-white/80">Lives Inspired</div>
+                            </div>
+                        </div> -->
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="group px-8 py-4 rounded-full border-2 border-white/30 backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10 inline-flex items-center gap-3">
+                                <span class="text-white font-semibold">Read Naomie's Story</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-white transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                            <a href="donor_page.html" class="px-8 py-4 rounded-full transition-all duration-300 hover:transform hover:scale-105 inline-flex items-center gap-3" style="background: var(--secondary); box-shadow: 0 10px 30px rgba(249, 126, 199, 0.3);">
+                                <span class="text-white font-semibold">Support the Foundation</span>
+                                <i data-lucide="heart" class="w-5 h-5 text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20" style="background: #ffffff">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join Our Community</h2>
+            <p class="mb-8" style="color: var(--muted-foreground)">
+                Get updates on meetings and events.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" 
+                       class="flex-1 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2" 
+                       style="border-color: var(--border); focus:ring-color: var(--primary)">
+                <button type="submit" class="btn px-8 py-3 rounded-lg text-white" style="background: var(--primary)">
+                    Subscribe
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section" style="background: var(--accent); color: var(--background)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- The Foundation -->
+                <div>
+                    <h3 class="font-bold mb-4">THE FOUNDATION</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Our Story</a></li>
+                        <li><a href="form.html" class="footer-link opacity-75 hover:opacity-100">Apply for Grant</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Application Process</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Government Supports</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Success Stories</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Us -->
+                <div>
+                    <h3 class="font-bold mb-4">SUPPORT US</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Become a Member</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Ways & Donation</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Corporate Sponsorship</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Volunteer</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Partner Events</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Legacy Giving</a></li>
+                    </ul>
+                </div>
+                
+                <!-- About Us -->
+                <div>
+                    <h3 class="font-bold mb-4">ABOUT US</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Our Mission</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Annual Report</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Leadership Team</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Newsletter</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Make a Update</a></li>
+                        <li><a href="#" class="footer-link opacity-75 hover:opacity-100">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold mb-4">CONTACT</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="opacity-75">The Secretary</p>
+                            <p class="opacity-75">79 Grosvenor Road</p>
+                            <p class="opacity-75">London SW1V 3PL</p>
+                        </div>
+                        <div>
+                            <p class="opacity-75">enquiries@wcf.org.uk</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="footer-link opacity-75 hover:opacity-100">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t text-center text-sm opacity-75" style="border-color: rgba(255,255,255,0.1)">
+                <p>© 2024 Women's Careers Foundation (Reg Charity 1234567)</p>
+                <p class="mt-2">
+                    <a href="#" class="footer-link">Privacy Policy</a> | 
+                    <a href="#" class="footer-link">Accessibility</a> | 
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Animate numbers on scroll
+        let animated = false;
+        function animateNumbers() {
+            if (animated) return;
+            
+            const numbers = document.querySelectorAll('.stat-number');
+            const statsSection = document.querySelector('.stat-number').closest('section');
+            const rect = statsSection.getBoundingClientRect();
+            
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                animated = true;
+                numbers.forEach((num, index) => {
+                    const finalText = num.innerText;
+                    const isNumber = /^\d+/.test(finalText);
+                    
+                    if (isNumber) {
+                        const finalValue = parseInt(finalText.match(/\d+/)[0]);
+                        let currentValue = 0;
+                        const increment = finalValue / 50;
+                        const suffix = finalText.replace(/^\d+/, '');
+                        
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                currentValue = finalValue;
+                                clearInterval(timer);
+                            }
+                            num.innerText = Math.floor(currentValue) + suffix;
+                        }, 30);
+                    }
+                });
+            }
+        }
+        
+        window.addEventListener('scroll', animateNumbers);
+        animateNumbers(); // Check on load
+
+        // Testimonial Carousel Functionality
+        const testimonials = [
+            {
+                initials: "VG",
+                title: "Veterinary Graduate",
+                year: "2022 Recipient",
+                quote: "Without your support to help with my tuition fees, I would not have been able to undertake my life-long ambition to become a veterinary surgeon and I would like to say a massive thank you.",
+                gradient: "linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)"
+            },
+            {
+                initials: "MS",
+                title: "Medical Student",
+                year: "2023 Recipient",
+                quote: "It is incredibly humbling to be recognised as a recipient of the WCF grant as it has proudly supported generations of girls and women like me to grow in independence through financing training towards careers, in my case in medicine",
+                gradient: "linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)",
+                featured: true
+            },
+            {
+                initials: "NT",
+                title: "Newly Qualified Teacher",
+                year: "2023 Recipient",
+                quote: "I have now completed my teacher training. My first day teaching as a teacher starts tomorrow. Thank you again for all you have done.",
+                gradient: "linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)"
+            },
+            {
+                initials: "VS",
+                title: "Vet Student",
+                year: "2022 Recipient",
+                quote: "With the help of your grant awarded to me last year, I completed my placement at Global Vet Clinic Sri Lanka in August 2022. It was an invaluable experience. Again, many thanks for your financial support, without which my (Sri Lanka) placement would not have been possible.",
+                gradient: "linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%)"
+            },
+            {
+                initials: "HG",
+                title: "Hannah Goldsack",
+                year: "2024 Recipient",
+                quote: "The support from Women's Careers Foundation has been instrumental in helping me achieve my career goals.",
+                gradient: "linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%)",
+                image: "img/Hannah_Goldsack.jpeg"
+            }
+        ];
+
+        let currentIndex = 1; // Start with MS in center
+
+        function changeTestimonial(direction) {
+            const container = document.getElementById('testimonials-container');
+            const cards = container.querySelectorAll('.testimonial-card');
+
+            // Update index
+            currentIndex = (currentIndex + direction + testimonials.length) % testimonials.length;
+
+            // Calculate which testimonials to show
+            const leftIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            const centerIndex = currentIndex;
+            const rightIndex = (currentIndex + 1) % testimonials.length;
+
+            // Update card data
+            const indices = [leftIndex, centerIndex, rightIndex];
+
+            cards.forEach((card, cardIndex) => {
+                const testimonial = testimonials[indices[cardIndex]];
+                const isCenter = cardIndex === 1;
+
+                // Find elements more carefully
+                const innerCard = card.querySelector('.rounded-2xl');
+                const avatarDiv = card.querySelector('.profile-avatar');
+                const avatarInner = avatarDiv ? avatarDiv.querySelector('div') : null;
+                const initialsSpan = avatarDiv ? avatarDiv.querySelector('span') : null;
+                const titleElement = card.querySelector('h4');
+                const yearElement = card.querySelectorAll('p')[0]; // First p tag is year
+                const quoteElement = card.querySelectorAll('p')[1]; // Second p tag is quote
+
+                // Update content
+                if (initialsSpan) initialsSpan.textContent = testimonial.initials;
+                if (titleElement) titleElement.textContent = testimonial.title;
+                if (yearElement) yearElement.textContent = testimonial.year;
+                if (quoteElement) {
+                    if (testimonial.image) {
+                        quoteElement.style.display = 'none';
+                    } else {
+                        quoteElement.style.display = 'block';
+                        quoteElement.textContent = `"${testimonial.quote}"`;
+                    }
+                }
+
+                // Handle image vs logo display
+                if (avatarInner) {
+                    if (testimonial.image) {
+                        // Display image
+                        avatarInner.innerHTML = `<img src="${testimonial.image}" alt="${testimonial.title}" class="w-full h-full object-cover" style="padding: 0;">`;
+                    } else {
+                        // Display logo SVG
+                        avatarInner.innerHTML = `<svg width="48" height="48" viewBox="0 0 394 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Group 1">
+                                <path id="Rectangle 3" d="M138.289 78.9999L197 -4.93588e-05L257.789 78.9999L197 162L138.289 78.9999Z" fill="#F873C0"/>
+                                <path id="Rectangle 2" d="M393.5 0H310.5L197 160.5L242.5 223.5L393.5 0Z" fill="#EF3800"/>
+                                <path id="Rectangle 1" d="M0.5 0H83.5L197 160.5L151.5 223.5L0.5 0Z" fill="#EF3800"/>
+                            </g>
+                        </svg>`;
+                    }
+                }
+
+                // Update styling based on position
+                if (isCenter) {
+                    // Center card styling
+                    if (innerCard) {
+                        if (testimonial.image) {
+                            innerCard.style.background = `linear-gradient(rgba(2, 57, 59, 0.85), rgba(2, 57, 59, 0.85)), url('${testimonial.image}')`;
+                            innerCard.style.backgroundSize = 'cover';
+                            innerCard.style.backgroundPosition = 'center';
+                        } else {
+                            innerCard.style.background = 'var(--accent)';
+                            innerCard.style.backgroundSize = '';
+                            innerCard.style.backgroundPosition = '';
+                        }
+                        innerCard.classList.remove('bg-white');
+                        innerCard.classList.add('testimonial-center-card');
+                    }
+
+                    if (avatarDiv) {
+                        avatarDiv.style.background = 'var(--accent)';
+                        avatarDiv.classList.add('bg-white');
+                    }
+
+                    if (avatarInner) {
+                        avatarInner.style.background = 'white';
+                    }
+
+                    if (initialsSpan) {
+                        initialsSpan.style.color = 'var(--accent)';
+                        initialsSpan.classList.remove('text-white');
+                    }
+
+                    if (titleElement) {
+                        titleElement.style.cssText = titleElement.style.cssText.replace(/color:[^;]+;?/, '') + 'color: white !important;';
+                        titleElement.classList.add('text-white');
+                    }
+
+                    if (yearElement) {
+                        yearElement.style.color = 'var(--background)';
+                        yearElement.style.opacity = '0.8';
+                    }
+
+                    if (quoteElement) {
+                        quoteElement.style.color = 'white';
+                        quoteElement.classList.add('text-white');
+                    }
+
+                    // Animation classes
+                    card.classList.remove('testimonial-left', 'testimonial-right');
+                    card.classList.add('testimonial-center');
+                    card.style.transform = 'scale(1.05)';
+                    card.style.opacity = '1';
+
+                } else {
+                    // Side card styling
+                    if (innerCard) {
+                        if (testimonial.image) {
+                            innerCard.style.background = `linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('${testimonial.image}')`;
+                            innerCard.style.backgroundSize = 'cover';
+                            innerCard.style.backgroundPosition = 'center';
+                        } else {
+                            innerCard.style.background = 'white';
+                            innerCard.style.backgroundSize = '';
+                            innerCard.style.backgroundPosition = '';
+                        }
+                        innerCard.classList.add('bg-white');
+                        innerCard.classList.remove('testimonial-center-card');
+                    }
+
+                    if (avatarDiv) {
+                        avatarDiv.style.background = 'var(--accent)';
+                        avatarDiv.classList.remove('bg-white');
+                    }
+
+                    if (avatarInner) {
+                        avatarInner.style.background = 'transparent';
+                    }
+
+                    if (initialsSpan) {
+                        initialsSpan.style.color = 'white';
+                        initialsSpan.classList.add('text-white');
+                    }
+
+                    if (titleElement) {
+                        titleElement.style.cssText = titleElement.style.cssText.replace(/color:[^;]+;?/, '') + 'color: var(--accent) !important;';
+                        titleElement.classList.remove('text-white');
+                    }
+
+                    if (yearElement) {
+                        yearElement.style.color = 'var(--muted-foreground)';
+                        yearElement.style.opacity = '1';
+                    }
+
+                    if (quoteElement) {
+                        quoteElement.style.color = 'var(--muted-foreground)';
+                        quoteElement.classList.remove('text-white');
+                    }
+
+                    // Animation classes
+                    card.classList.remove('testimonial-center');
+                    if (cardIndex === 0) {
+                        card.classList.add('testimonial-left');
+                        card.classList.remove('testimonial-right');
+                    } else {
+                        card.classList.add('testimonial-right');
+                        card.classList.remove('testimonial-left');
+                    }
+                    card.style.transform = 'scale(0.95)';
+                    card.style.opacity = '0.7';
+                }
+            });
+
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                    dot.style.width = '48px';
+                    dot.style.background = 'var(--primary)';
+                    dot.style.opacity = '1';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.width = '32px';
+                    dot.style.background = 'var(--muted-foreground)';
+                    dot.style.opacity = '0.3';
+                }
+            });
+        }
+
+        // Auto-rotate carousel
+        let autoRotate = setInterval(() => {
+            changeTestimonial(1);
+        }, 5000);
+
+        // Pause on hover
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselContainer = document.querySelector('#testimonials-container');
+            if (carouselContainer) {
+                const parentElement = carouselContainer.parentElement;
+                parentElement.addEventListener('mouseenter', () => clearInterval(autoRotate));
+                parentElement.addEventListener('mouseleave', () => {
+                    clearInterval(autoRotate);
+                    autoRotate = setInterval(() => {
+                        changeTestimonial(1);
+                    }, 5000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

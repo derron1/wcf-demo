@@ -1,0 +1,2 @@
+Janine Harris
+Janine has been involved with the WCF since 2013, having first heard about the charity through her Aunt, Beth Hayward, who was the WCF secretary from 1980 until November 2020. Previously, Janine worked for the charity PDSA which is a wonderful organisation doing a brilliant job for distressed animals (and humans too!) Janine enjoys painting, drawing, reading and music, gardening, dog walking and anything that gets her out in the countryside.

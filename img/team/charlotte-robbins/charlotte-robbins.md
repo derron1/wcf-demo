@@ -1,0 +1,3 @@
+Charlotte Robbins
+
+Charlotte Robbins lives in south west London. She has been involved with the WCF for around seven years and delights in being able to help support women in a huge range of careers from embroidery to music therapy to environmental engineering. She is now retired but qualified as a barrister in 1974 and worked as a Senior Legal Advisor specialising in Family Law, particularly child protection cases. She is enjoying her retirement and being able to indulge my pleasures in reading, gardening, art, family and friendships as well as helping other women make the best of their lives and talents.
